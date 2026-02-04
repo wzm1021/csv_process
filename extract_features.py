@@ -20,41 +20,56 @@ def load_config(config_path: str = "config_feature.json") -> dict:
 def parse_step_config(steps_config: list[str]) -> list[str]:
     """
     解析STEP配置，支持单个STEP和范围
-    例如：["STEP18", "STEP20-23"] -> ["STEP18", "STEP20", "STEP21", "STEP22", "STEP23"]
+    配置格式：STEP18 表示值18，STEP20-23 表示值20,21,22,23
+    例如：["STEP18", "STEP20-23"] -> ["18", "20", "21", "22", "23"]
     """
     result = []
     for item in steps_config:
         if "-" in item:
+            # 范围格式：STEP20-23 -> 20,21,22,23
             match = re.match(r"(\D*)(\d+)-(\d+)", item)
             if match:
-                prefix = match.group(1)
                 start = int(match.group(2))
                 end = int(match.group(3))
                 for i in range(start, end + 1):
-                    result.append(f"{prefix}{i}")
+                    result.append(str(i))
         else:
-            result.append(item)
+            # 单个格式：STEP18 -> 18
+            match = re.match(r"(\D*)(\d+)$", item)
+            if match:
+                result.append(match.group(2))
+            else:
+                result.append(item)
     return result
 
 
 def get_step_groups(steps_config: list[str]) -> dict[str, list[str]]:
     """
     获取STEP分组，用于合并分析
-    返回 {组名: [STEP列表]}
-    例如：["STEP18", "STEP20-23"] -> {"STEP18": ["STEP18"], "STEP20-23": ["STEP20", "STEP21", "STEP22", "STEP23"]}
+    返回 {组名: [STEP值列表]}
+    配置格式：STEP18 表示匹配STEP列值为18，STEP20-23 表示匹配STEP列值为20,21,22,23并合并分析
+    例如：["STEP18", "STEP20-23"] -> {"STEP18": ["18"], "STEP20-23": ["20", "21", "22", "23"]}
     """
     groups = {}
     for item in steps_config:
         if "-" in item:
+            # 范围格式：STEP20-23 -> 提取20到23
             match = re.match(r"(\D*)(\d+)-(\d+)", item)
             if match:
-                prefix = match.group(1)
                 start = int(match.group(2))
                 end = int(match.group(3))
-                steps = [f"{prefix}{i}" for i in range(start, end + 1)]
+                # 只保留数字部分作为匹配值
+                steps = [str(i) for i in range(start, end + 1)]
                 groups[item] = steps
         else:
-            groups[item] = [item]
+            # 单个格式：STEP18 -> 提取18
+            match = re.match(r"(\D*)(\d+)$", item)
+            if match:
+                num = match.group(2)
+                groups[item] = [num]
+            else:
+                # 如果没有数字，保持原样
+                groups[item] = [item]
     return groups
 
 
@@ -75,6 +90,39 @@ def read_meta_info(file_path: str, meta_sheet: str, meta_columns: list[str]) -> 
         return {col: "" for col in meta_columns}
 
 
+def normalize_step_value(step_val) -> str:
+    """
+    标准化STEP列的值，将数字或文本转为整数字符串
+    例如：18.0 -> "18", 18 -> "18", "18" -> "18", "18.0" -> "18"
+    """
+    if pd.isna(step_val):
+        return ""
+    # 如果是数字类型，转为整数再转字符串
+    if isinstance(step_val, (int, float)):
+        return str(int(step_val))
+    # 如果是文本类型，尝试转为数字再转为整数字符串
+    try:
+        return str(int(float(str(step_val).strip())))
+    except (ValueError, TypeError):
+        return str(step_val).strip()
+
+
+def parse_value(val) -> float | None:
+    """
+    将VALUE列的值转换为float类型
+    支持数字类型和文本类型（如 "123.45"）
+    """
+    if pd.isna(val):
+        return None
+    if isinstance(val, (int, float)):
+        return float(val)
+    # 文本类型，尝试转换
+    try:
+        return float(str(val).strip())
+    except (ValueError, TypeError):
+        return None
+
+
 def read_sheet_data(file_path: str, sheet_name: str, step_col: str, value_col: str, target_steps: list[str]) -> list[float]:
     """读取指定sheet中目标STEP的VALUE数据"""
     try:
@@ -84,10 +132,10 @@ def read_sheet_data(file_path: str, sheet_name: str, step_col: str, value_col: s
 
         values = []
         for _, row in df.iterrows():
-            step = str(row[step_col]).strip() if pd.notna(row[step_col]) else ""
-            value = row[value_col]
-            if step in target_steps and pd.notna(value):
-                values.append(float(value))
+            step = normalize_step_value(row[step_col])
+            value = parse_value(row[value_col])
+            if step in target_steps and value is not None:
+                values.append(value)
 
         return values
     except Exception as e:

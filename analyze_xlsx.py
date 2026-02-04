@@ -36,6 +36,39 @@ def get_sheet_names(file_path: str, specified_sheets: list[str]) -> list[str]:
     return xl.sheet_names
 
 
+def normalize_step_value(step_val) -> str | None:
+    """
+    标准化STEP列的值，将数字或文本转为整数字符串
+    例如：18.0 -> "18", 18 -> "18", "18" -> "18", "18.0" -> "18"
+    """
+    if pd.isna(step_val):
+        return None
+    # 如果是数字类型，转为整数再转字符串
+    if isinstance(step_val, (int, float)):
+        return str(int(step_val))
+    # 如果是文本类型，尝试转为数字再转为整数字符串
+    try:
+        return str(int(float(str(step_val).strip())))
+    except (ValueError, TypeError):
+        return str(step_val).strip()
+
+
+def parse_value(val) -> float | None:
+    """
+    将VALUE列的值转换为float类型
+    支持数字类型和文本类型（如 "123.45"）
+    """
+    if pd.isna(val):
+        return None
+    if isinstance(val, (int, float)):
+        return float(val)
+    # 文本类型，尝试转换
+    try:
+        return float(str(val).strip())
+    except (ValueError, TypeError):
+        return None
+
+
 def read_sheet_data(file_path: str, sheet_name: str, step_col: str, value_col: str) -> dict:
     """
     读取sheet数据，返回 {step: {'values': [values], 'count': 行数}} 字典
@@ -47,13 +80,12 @@ def read_sheet_data(file_path: str, sheet_name: str, step_col: str, value_col: s
 
         result = {}
         for _, row in df.iterrows():
-            step = row[step_col]
-            value = row[value_col]
-            if pd.notna(step) and pd.notna(value):
-                step_key = str(step).strip()
+            step_key = normalize_step_value(row[step_col])
+            value = parse_value(row[value_col])
+            if step_key is not None and value is not None:
                 if step_key not in result:
                     result[step_key] = {'values': [], 'count': 0}
-                result[step_key]['values'].append(float(value))
+                result[step_key]['values'].append(value)
                 result[step_key]['count'] += 1
 
         return result
