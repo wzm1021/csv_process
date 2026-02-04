@@ -1,0 +1,14 @@
+{
+    "folder_path": "./data",
+    "baseline_file": "baseline.xlsx",
+    "sheets": [],
+    "step_column": "STEP",
+    "value_column": "VALUE",
+    "threshold_percent": 5,
+    "duration_threshold_rows": 1,
+    "correlation_threshold": 0.8,
+    "segment_trend_threshold": 80,
+    "diff_sign_threshold": 70,
+    "num_segments": 4,
+    "output_file": "result.csv"
+}

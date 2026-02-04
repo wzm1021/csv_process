@@ -1,0 +1,18 @@
+{
+    "folder_path": "./data",
+    "output_file": "feature_result.xlsx",
+
+    "meta_sheet": "metaInfo",
+    "meta_columns": ["Wafer", "EQP", "model", "recipe"],
+
+    "step_column": "STEP",
+    "value_column": "VALUE",
+
+    "steps_to_analyze": ["STEP18", "STEP19", "STEP20-23"],
+
+    "temperature_sheets": ["Temp1", "Temp2"],
+    "binary_sheets": ["Status1", "Status2"],
+    "other_sheets": ["Pressure1", "Flow1"],
+
+    "stable_threshold": 0.5
+}
