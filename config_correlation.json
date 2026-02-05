@@ -1,0 +1,3 @@
+{
+    "exclude_columns": ["wafer", "Wafer", "EQP", "model", "recipe", "源文件"]
+}
