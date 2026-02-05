@@ -19,17 +19,42 @@ def load_config(config_path: str = "config.json") -> dict:
         return json.load(f)
 
 
-def get_xlsx_files(folder_path: str, baseline_file: str) -> tuple[str, list[str]]:
-    """获取基准文件和待比较文件列表"""
+def get_all_xlsx_files(folder_path: str) -> list[str]:
+    """获取文件夹中所有xlsx文件"""
     folder = Path(folder_path)
-    all_files = list(folder.glob("*.xlsx"))
+    return [str(f) for f in folder.glob("*.xlsx")]
 
-    baseline_path = folder / baseline_file
-    if not baseline_path.exists():
-        raise FileNotFoundError(f"基准文件不存在: {baseline_path}")
 
-    compare_files = [str(f) for f in all_files if f.name != baseline_file]
-    return str(baseline_path), compare_files
+def get_baseline_for_recipe(recipe: str, baseline_files: dict[str, str], folder_path: str) -> str | None:
+    """根据Recipe后缀获取对应的基准文件路径"""
+    for suffix, baseline_file in baseline_files.items():
+        if recipe.endswith(suffix):
+            baseline_path = Path(folder_path) / baseline_file
+            if baseline_path.exists():
+                return str(baseline_path)
+    return None
+
+
+def read_file_meta_only(file_path: str, meta_sheet: str, meta_columns: list[str]) -> dict:
+    """只读取文件的元数据"""
+    try:
+        xl = pd.ExcelFile(file_path, engine='openpyxl')
+        if meta_sheet not in xl.sheet_names:
+            xl.close()
+            return {}
+        df = xl.parse(meta_sheet)
+        xl.close()
+
+        result = {}
+        for col in meta_columns:
+            if col in df.columns and len(df) > 0:
+                value = df[col].iloc[0]
+                result[col] = value if pd.notna(value) else ""
+            else:
+                result[col] = ""
+        return result
+    except Exception:
+        return {}
 
 
 def get_sheet_names_fast(file_path: str, specified_sheets: list[str]) -> list[str]:
@@ -109,26 +134,50 @@ def parse_sheet_data_vectorized(df: pd.DataFrame, step_col: str, value_col: str)
     return result
 
 
-def load_file_data(file_path: str, sheets: list[str], step_col: str, value_col: str) -> dict:
-    """加载单个文件的所有sheet数据"""
-    sheets_df = read_all_sheets_fast(file_path, sheets)
+def read_meta_info(df: pd.DataFrame, meta_columns: list[str]) -> dict:
+    """从DataFrame读取元数据"""
+    result = {}
+    for col in meta_columns:
+        if col in df.columns and len(df) > 0:
+            value = df[col].iloc[0]
+            result[col] = value if pd.notna(value) else ""
+        else:
+            result[col] = ""
+    return result
+
+
+def load_file_data(file_path: str, sheets: list[str], step_col: str, value_col: str,
+                   meta_sheet: str = None, meta_columns: list[str] = None) -> tuple[dict, dict]:
+    """加载单个文件的所有sheet数据和元数据"""
+    all_sheets = list(sheets)
+    if meta_sheet and meta_sheet not in all_sheets:
+        all_sheets.append(meta_sheet)
+
+    sheets_df = read_all_sheets_fast(file_path, all_sheets)
     file_data = {}
 
     for sheet_name, df in sheets_df.items():
-        file_data[sheet_name] = parse_sheet_data_vectorized(df, step_col, value_col)
+        if sheet_name != meta_sheet:
+            file_data[sheet_name] = parse_sheet_data_vectorized(df, step_col, value_col)
 
-    return file_data
+    # 读取元数据
+    meta_info = {}
+    if meta_sheet and meta_columns:
+        meta_df = sheets_df.get(meta_sheet, pd.DataFrame())
+        meta_info = read_meta_info(meta_df, meta_columns)
+
+    return file_data, meta_info
 
 
-def load_file_wrapper(args: tuple) -> tuple[str, dict]:
+def load_file_wrapper(args: tuple) -> tuple[str, dict, dict]:
     """多进程包装函数"""
-    file_path, sheets, step_col, value_col = args
+    file_path, sheets, step_col, value_col, meta_sheet, meta_columns = args
     try:
-        data = load_file_data(file_path, sheets, step_col, value_col)
-        return (file_path, data)
+        data, meta = load_file_data(file_path, sheets, step_col, value_col, meta_sheet, meta_columns)
+        return (file_path, data, meta)
     except Exception as e:
         print(f"加载文件失败 {file_path}: {e}")
-        return (file_path, {})
+        return (file_path, {}, {})
 
 
 def calculate_value_diff(baseline_values: list[float], compare_values: list[float]) -> tuple[float, float, float]:
@@ -263,10 +312,11 @@ def trend_to_str(trends: list[int]) -> str:
     return "".join(symbols.get(t, "?") for t in trends)
 
 
-def analyze_files(config: dict) -> dict:
-    """分析所有文件，返回各类差异结果（优化版：先加载所有数据到内存）"""
-    baseline_file, compare_files = get_xlsx_files(config["folder_path"], config["baseline_file"])
-    sheets = get_sheet_names_fast(baseline_file, config.get("sheets", []))
+def analyze_files(config: dict) -> tuple[dict, list[str]]:
+    """分析所有文件，返回各类差异结果（根据Recipe后缀使用不同基准文件）"""
+    folder_path = config["folder_path"]
+    baseline_files = config.get("baseline_files", {})
+    recipe_column = config.get("recipe_column", "recipe")
 
     # 阈值配置
     value_threshold = config["threshold_percent"]
@@ -278,6 +328,8 @@ def analyze_files(config: dict) -> dict:
 
     step_col = config["step_column"]
     value_col = config["value_column"]
+    meta_sheet = config.get("meta_sheet", "")
+    meta_columns = config.get("meta_columns", [])
 
     results = {
         "value": [],
@@ -286,11 +338,14 @@ def analyze_files(config: dict) -> dict:
         "segment": [],
         "diff_sign": []
     }
-    baseline_name = Path(baseline_file).name
 
-    print(f"基准文件: {baseline_name}")
+    # 获取所有文件
+    all_files = get_all_xlsx_files(folder_path)
+    baseline_file_names = set(baseline_files.values())
+    compare_files = [f for f in all_files if Path(f).name not in baseline_file_names]
+
+    print(f"基准文件配置: {baseline_files}")
     print(f"待比较文件数: {len(compare_files)}")
-    print(f"分析sheet: {sheets}")
     print(f"VALUE差异阈值: {value_threshold}%")
     print(f"时长差异阈值: {duration_threshold}行")
     print(f"相关系数阈值: {correlation_threshold}")
@@ -298,136 +353,163 @@ def analyze_files(config: dict) -> dict:
     print(f"差分符号一致性阈值: {diff_sign_threshold}%")
     print("-" * 60)
 
-    # 第一阶段：并行加载所有文件数据到内存
-    print("阶段1: 并行加载文件数据...")
-    all_files = [baseline_file] + compare_files
-    num_workers = min(multiprocessing.cpu_count(), len(all_files))
-    print(f"使用 {num_workers} 个并行进程")
+    # 第一阶段：读取所有文件的元数据，按Recipe分组
+    print("阶段1: 读取文件元数据并分组...")
+    file_groups = {}  # {baseline_path: [compare_files]}
 
-    tasks = [(f, sheets, step_col, value_col) for f in all_files]
-    files_data = {}
+    for file_path in compare_files:
+        meta = read_file_meta_only(file_path, meta_sheet, meta_columns)
+        recipe = str(meta.get(recipe_column, ""))
+        baseline_path = get_baseline_for_recipe(recipe, baseline_files, folder_path)
 
-    with ProcessPoolExecutor(max_workers=num_workers) as executor:
-        futures = {executor.submit(load_file_wrapper, task): task[0] for task in tasks}
-        completed = 0
+        if baseline_path:
+            if baseline_path not in file_groups:
+                file_groups[baseline_path] = []
+            file_groups[baseline_path].append(file_path)
+        else:
+            print(f"  警告: {Path(file_path).name} 的Recipe '{recipe}' 无匹配基准文件，跳过")
 
-        for future in as_completed(futures):
-            completed += 1
-            file_path, data = future.result()
-            files_data[file_path] = data
+    for baseline_path, files in file_groups.items():
+        print(f"  {Path(baseline_path).name}: {len(files)} 个文件")
 
-            if completed % 50 == 0 or completed == len(all_files):
-                print(f"  加载进度: {completed}/{len(all_files)} ({completed*100//len(all_files)}%)")
+    # 第二阶段：按组加载数据并比较
+    print("\n阶段2: 并行加载文件数据并比较...")
 
-    print(f"数据加载完成，开始分析比较...")
-
-    # 第二阶段：内存中比较分析
-    baseline_data_all = files_data.get(baseline_file, {})
-
-    for sheet in sheets:
-        baseline_data = baseline_data_all.get(sheet, {})
-        if not baseline_data:
+    for baseline_file, group_files in file_groups.items():
+        if not group_files:
             continue
 
-        for compare_file in compare_files:
-            compare_name = Path(compare_file).name
-            compare_data_all = files_data.get(compare_file, {})
-            compare_data = compare_data_all.get(sheet, {})
-            if not compare_data:
+        print(f"\n处理基准文件: {Path(baseline_file).name}")
+
+        # 获取要分析的sheet
+        sheets = get_sheet_names_fast(baseline_file, config.get("sheets", []))
+
+        # 加载该组的所有文件
+        all_group_files = [baseline_file] + group_files
+        num_workers = min(multiprocessing.cpu_count(), len(all_group_files))
+
+        tasks = [(f, sheets, step_col, value_col, meta_sheet, meta_columns) for f in all_group_files]
+        files_data = {}
+        files_meta = {}
+
+        with ProcessPoolExecutor(max_workers=num_workers) as executor:
+            futures = {executor.submit(load_file_wrapper, task): task[0] for task in tasks}
+            for future in as_completed(futures):
+                file_path, data, meta = future.result()
+                files_data[file_path] = data
+                files_meta[file_path] = meta
+
+        print(f"  加载完成，开始比较 {len(group_files)} 个文件...")
+
+        # 比较分析
+        baseline_data_all = files_data.get(baseline_file, {})
+
+        for sheet in sheets:
+            baseline_data = baseline_data_all.get(sheet, {})
+            if not baseline_data:
                 continue
 
-            for step, baseline_info in baseline_data.items():
-                if step not in compare_data:
+            for compare_file in group_files:
+                compare_name = Path(compare_file).name
+                compare_meta = files_meta.get(compare_file, {})
+                compare_data_all = files_data.get(compare_file, {})
+                compare_data = compare_data_all.get(sheet, {})
+                if not compare_data:
                     continue
 
-                compare_info = compare_data[step]
-                baseline_values = baseline_info['values']
-                compare_values = compare_info['values']
-                baseline_count = baseline_info['count']
-                compare_count = compare_info['count']
+                for step, baseline_info in baseline_data.items():
+                    if step not in compare_data:
+                        continue
 
-                # 1. 检查VALUE差异
-                baseline_avg, compare_avg, diff_percent = calculate_value_diff(baseline_values, compare_values)
-                if diff_percent > value_threshold:
-                    results["value"].append({
-                        "比较文件": compare_name, "Sheet名": sheet, "Step": step,
-                        "基准均值": round(baseline_avg, 4), "比较均值": round(compare_avg, 4),
-                        "差异百分比": round(diff_percent, 2)
-                    })
+                    compare_info = compare_data[step]
+                    baseline_values = baseline_info['values']
+                    compare_values = compare_info['values']
+                    baseline_count = baseline_info['count']
+                    compare_count = compare_info['count']
 
-                # 2. 检查时长(行数)差异
-                duration_diff = abs(compare_count - baseline_count)
-                if duration_diff > duration_threshold:
-                    results["duration"].append({
-                        "比较文件": compare_name, "Sheet名": sheet, "Step": step,
-                        "基准行数": baseline_count, "比较行数": compare_count,
-                        "差异行数": duration_diff
-                    })
+                    # 基础结果信息（包含元数据）
+                    base_result = {"比较文件": compare_name, **compare_meta, "Sheet名": sheet, "Step": step}
 
-                # 3. 检查相关系数（趋势方向）
-                corr = calculate_correlation(baseline_values, compare_values)
-                if corr < correlation_threshold:
-                    results["correlation"].append({
-                        "比较文件": compare_name, "Sheet名": sheet, "Step": step,
-                        "相关系数": round(corr, 4)
-                    })
+                    # 1. 检查VALUE差异
+                    baseline_avg, compare_avg, diff_percent = calculate_value_diff(baseline_values, compare_values)
+                    if diff_percent > value_threshold:
+                        results["value"].append({
+                            **base_result,
+                            "基准均值": round(baseline_avg, 4), "比较均值": round(compare_avg, 4),
+                            "差异百分比": round(diff_percent, 2)
+                        })
 
-                # 4. 检查分段趋势
-                seg_consistency, baseline_trends, compare_trends = compare_segment_trends(
-                    baseline_values, compare_values, num_segments
-                )
-                if seg_consistency < segment_threshold:
-                    results["segment"].append({
-                        "比较文件": compare_name, "Sheet名": sheet, "Step": step,
-                        "一致性": round(seg_consistency, 1),
-                        "基准趋势": trend_to_str(baseline_trends),
-                        "比较趋势": trend_to_str(compare_trends)
-                    })
+                    # 2. 检查时长(行数)差异
+                    duration_diff = abs(compare_count - baseline_count)
+                    if duration_diff > duration_threshold:
+                        results["duration"].append({
+                            **base_result,
+                            "基准行数": baseline_count, "比较行数": compare_count,
+                            "差异行数": duration_diff
+                        })
 
-                # 5. 检查差分符号序列
-                diff_consistency, _, _ = compare_diff_signs(baseline_values, compare_values)
-                if diff_consistency < diff_sign_threshold:
-                    results["diff_sign"].append({
-                        "比较文件": compare_name, "Sheet名": sheet, "Step": step,
-                        "一致性": round(diff_consistency, 1)
-                    })
+                    # 3. 检查相关系数（趋势方向）
+                    corr = calculate_correlation(baseline_values, compare_values)
+                    if corr < correlation_threshold:
+                        results["correlation"].append({
+                            **base_result,
+                            "相关系数": round(corr, 4)
+                        })
 
-    return results
+                    # 4. 检查分段趋势
+                    seg_consistency, baseline_trends, compare_trends = compare_segment_trends(
+                        baseline_values, compare_values, num_segments
+                    )
+                    if seg_consistency < segment_threshold:
+                        results["segment"].append({
+                            **base_result,
+                            "一致性": round(seg_consistency, 1),
+                            "基准趋势": trend_to_str(baseline_trends),
+                            "比较趋势": trend_to_str(compare_trends)
+                        })
+
+                    # 5. 检查差分符号序列
+                    diff_consistency, _, _ = compare_diff_signs(baseline_values, compare_values)
+                    if diff_consistency < diff_sign_threshold:
+                        results["diff_sign"].append({
+                            **base_result,
+                            "一致性": round(diff_consistency, 1)
+                        })
+
+    return results, meta_columns
 
 
-def save_results(results: dict, output_file: str):
+def save_results(results: dict, meta_columns: list[str], output_file: str):
     """保存结果到CSV文件"""
     all_rows = []
 
+    def build_row(r: dict, diff_type: str, detail: str) -> dict:
+        row = {"比较文件": r["比较文件"]}
+        for col in meta_columns:
+            row[col] = r.get(col, "")
+        row["Sheet名"] = r["Sheet名"]
+        row["Step"] = r["Step"]
+        row["差异类型"] = diff_type
+        row["详情"] = detail
+        return row
+
     for r in results["value"]:
-        all_rows.append({
-            "比较文件": r["比较文件"], "Sheet名": r["Sheet名"], "Step": r["Step"],
-            "差异类型": "VALUE均值", "详情": f"基准:{r['基准均值']} 比较:{r['比较均值']} 差异:{r['差异百分比']}%"
-        })
+        all_rows.append(build_row(r, "VALUE均值",
+            f"基准:{r['基准均值']} 比较:{r['比较均值']} 差异:{r['差异百分比']}%"))
 
     for r in results["duration"]:
-        all_rows.append({
-            "比较文件": r["比较文件"], "Sheet名": r["Sheet名"], "Step": r["Step"],
-            "差异类型": "时长", "详情": f"基准:{r['基准行数']}行 比较:{r['比较行数']}行 差异:{r['差异行数']}行"
-        })
+        all_rows.append(build_row(r, "时长",
+            f"基准:{r['基准行数']}行 比较:{r['比较行数']}行 差异:{r['差异行数']}行"))
 
     for r in results["correlation"]:
-        all_rows.append({
-            "比较文件": r["比较文件"], "Sheet名": r["Sheet名"], "Step": r["Step"],
-            "差异类型": "相关系数", "详情": f"相关系数:{r['相关系数']}"
-        })
+        all_rows.append(build_row(r, "相关系数", f"相关系数:{r['相关系数']}"))
 
     for r in results["segment"]:
-        all_rows.append({
-            "比较文件": r["比较文件"], "Sheet名": r["Sheet名"], "Step": r["Step"],
-            "差异类型": "分段趋势", "详情": f"一致性:{r['一致性']}% 基准:{r['基准趋势']} 比较:{r['比较趋势']}"
-        })
+        all_rows.append(build_row(r, "分段趋势",
+            f"一致性:{r['一致性']}% 基准:{r['基准趋势']} 比较:{r['比较趋势']}"))
 
     for r in results["diff_sign"]:
-        all_rows.append({
-            "比较文件": r["比较文件"], "Sheet名": r["Sheet名"], "Step": r["Step"],
-            "差异类型": "差分符号", "详情": f"一致性:{r['一致性']}%"
-        })
+        all_rows.append(build_row(r, "差分符号", f"一致性:{r['一致性']}%"))
 
     if all_rows:
         df = pd.DataFrame(all_rows)
@@ -439,7 +521,7 @@ def save_results(results: dict, output_file: str):
 
 def main():
     config = load_config()
-    results = analyze_files(config)
+    results, meta_columns = analyze_files(config)
 
     print(f"\n===== 分析结果汇总 =====")
     print(f"VALUE均值差异: {len(results['value'])}条")
@@ -451,7 +533,7 @@ def main():
     total = sum(len(v) for v in results.values())
     print(f"\n共发现 {total} 条差异记录")
 
-    save_results(results, config["output_file"])
+    save_results(results, meta_columns, config["output_file"])
 
 
 if __name__ == "__main__":

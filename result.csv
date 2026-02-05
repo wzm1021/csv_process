@@ -1,615 +1,615 @@
-﻿比较文件,Sheet名,Step,差异类型,详情
-test_002.xlsx,Temp1,19,VALUE均值,基准:45.5194 比较:42.9076 差异:5.74%
-test_002.xlsx,Temp1,22,VALUE均值,基准:36.452 比较:41.2157 差异:13.07%
-test_002.xlsx,Temp1,23,VALUE均值,基准:39.7556 比较:36.7129 差异:7.65%
-test_003.xlsx,Temp1,18,VALUE均值,基准:45.5665 比较:43.1309 差异:5.35%
-test_003.xlsx,Temp1,20,VALUE均值,基准:41.127 比较:38.3742 差异:6.69%
-test_003.xlsx,Temp1,22,VALUE均值,基准:36.452 比较:44.3539 差异:21.68%
-test_003.xlsx,Temp1,23,VALUE均值,基准:39.7556 比较:42.8775 差异:7.85%
-test_004.xlsx,Temp1,18,VALUE均值,基准:45.5665 比较:37.2773 差异:18.19%
-test_004.xlsx,Temp1,19,VALUE均值,基准:45.5194 比较:37.0932 差异:18.51%
-test_004.xlsx,Temp1,20,VALUE均值,基准:41.127 比较:35.6833 差异:13.24%
-test_004.xlsx,Temp1,23,VALUE均值,基准:39.7556 比较:44.6363 差异:12.28%
-test_005.xlsx,Temp1,18,VALUE均值,基准:45.5665 比较:38.577 差异:15.34%
-test_005.xlsx,Temp1,19,VALUE均值,基准:45.5194 比较:35.927 差异:21.07%
-test_005.xlsx,Temp1,20,VALUE均值,基准:41.127 比较:38.5768 差异:6.2%
-test_005.xlsx,Temp1,22,VALUE均值,基准:36.452 比较:46.3692 差异:27.21%
-test_002.xlsx,Temp2,22,VALUE均值,基准:46.452 比较:51.2157 差异:10.26%
-test_002.xlsx,Temp2,23,VALUE均值,基准:49.7556 比较:46.7129 差异:6.12%
-test_003.xlsx,Temp2,20,VALUE均值,基准:51.127 比较:48.3742 差异:5.38%
-test_003.xlsx,Temp2,22,VALUE均值,基准:46.452 比较:54.3539 差异:17.01%
-test_003.xlsx,Temp2,23,VALUE均值,基准:49.7556 比较:52.8775 差异:6.27%
-test_004.xlsx,Temp2,18,VALUE均值,基准:55.5665 比较:47.2773 差异:14.92%
-test_004.xlsx,Temp2,19,VALUE均值,基准:55.5194 比较:47.0932 差异:15.18%
-test_004.xlsx,Temp2,20,VALUE均值,基准:51.127 比较:45.6833 差异:10.65%
-test_004.xlsx,Temp2,23,VALUE均值,基准:49.7556 比较:54.6363 差异:9.81%
-test_005.xlsx,Temp2,18,VALUE均值,基准:55.5665 比较:48.577 差异:12.58%
-test_005.xlsx,Temp2,19,VALUE均值,基准:55.5194 比较:45.927 差异:17.28%
-test_005.xlsx,Temp2,22,VALUE均值,基准:46.452 比较:56.3692 差异:21.35%
-test_002.xlsx,Status1,20,VALUE均值,基准:0.4545 比较:0.75 差异:65.0%
-test_002.xlsx,Status1,21,VALUE均值,基准:0.5556 比较:0.3462 差异:37.69%
-test_002.xlsx,Status1,22,VALUE均值,基准:0.375 比较:0.5 差异:33.33%
-test_002.xlsx,Status1,23,VALUE均值,基准:0.4286 比较:0.5625 差异:31.25%
-test_003.xlsx,Status1,18,VALUE均值,基准:0.5 比较:0.56 差异:12.0%
-test_003.xlsx,Status1,19,VALUE均值,基准:0.5 比较:0.4483 差异:10.34%
-test_003.xlsx,Status1,21,VALUE均值,基准:0.5556 比较:0.3929 差异:29.29%
-test_003.xlsx,Status1,22,VALUE均值,基准:0.375 比较:0.5 差异:33.33%
-test_003.xlsx,Status1,23,VALUE均值,基准:0.4286 比较:0.4583 差异:6.94%
-test_004.xlsx,Status1,18,VALUE均值,基准:0.5 比较:0.4118 差异:17.65%
-test_004.xlsx,Status1,19,VALUE均值,基准:0.5 比较:0.5882 差异:17.65%
-test_004.xlsx,Status1,20,VALUE均值,基准:0.4545 比较:0.4 差异:12.0%
-test_004.xlsx,Status1,21,VALUE均值,基准:0.5556 比较:0.7083 差异:27.5%
-test_004.xlsx,Status1,22,VALUE均值,基准:0.375 比较:0.5333 差异:42.22%
-test_004.xlsx,Status1,23,VALUE均值,基准:0.4286 比较:0.5556 差异:29.63%
-test_005.xlsx,Status1,18,VALUE均值,基准:0.5 比较:0.5556 差异:11.11%
-test_005.xlsx,Status1,19,VALUE均值,基准:0.5 比较:0.4 差异:20.0%
-test_005.xlsx,Status1,20,VALUE均值,基准:0.4545 比较:0.3889 差异:14.44%
-test_005.xlsx,Status1,21,VALUE均值,基准:0.5556 比较:0.4828 差异:13.1%
-test_005.xlsx,Status1,22,VALUE均值,基准:0.375 比较:0.3448 差异:8.05%
-test_005.xlsx,Status1,23,VALUE均值,基准:0.4286 比较:0.619 差异:44.44%
-test_002.xlsx,Status2,20,VALUE均值,基准:0.5455 比较:0.25 差异:54.17%
-test_002.xlsx,Status2,21,VALUE均值,基准:0.4444 比较:0.6538 差异:47.12%
-test_002.xlsx,Status2,22,VALUE均值,基准:0.625 比较:0.5 差异:20.0%
-test_002.xlsx,Status2,23,VALUE均值,基准:0.5714 比较:0.4375 差异:23.44%
-test_003.xlsx,Status2,18,VALUE均值,基准:0.5 比较:0.44 差异:12.0%
-test_003.xlsx,Status2,19,VALUE均值,基准:0.5 比较:0.5517 差异:10.34%
-test_003.xlsx,Status2,21,VALUE均值,基准:0.4444 比较:0.6071 差异:36.61%
-test_003.xlsx,Status2,22,VALUE均值,基准:0.625 比较:0.5 差异:20.0%
-test_003.xlsx,Status2,23,VALUE均值,基准:0.5714 比较:0.5417 差异:5.21%
-test_004.xlsx,Status2,18,VALUE均值,基准:0.5 比较:0.5882 差异:17.65%
-test_004.xlsx,Status2,19,VALUE均值,基准:0.5 比较:0.4118 差异:17.65%
-test_004.xlsx,Status2,20,VALUE均值,基准:0.5455 比较:0.6 差异:10.0%
-test_004.xlsx,Status2,21,VALUE均值,基准:0.4444 比较:0.2917 差异:34.37%
-test_004.xlsx,Status2,22,VALUE均值,基准:0.625 比较:0.4667 差异:25.33%
-test_004.xlsx,Status2,23,VALUE均值,基准:0.5714 比较:0.4444 差异:22.22%
-test_005.xlsx,Status2,18,VALUE均值,基准:0.5 比较:0.4444 差异:11.11%
-test_005.xlsx,Status2,19,VALUE均值,基准:0.5 比较:0.6 差异:20.0%
-test_005.xlsx,Status2,20,VALUE均值,基准:0.5455 比较:0.6111 差异:12.04%
-test_005.xlsx,Status2,21,VALUE均值,基准:0.4444 比较:0.5172 差异:16.38%
-test_005.xlsx,Status2,23,VALUE均值,基准:0.5714 比较:0.381 差异:33.33%
-test_002.xlsx,Stair1,19,VALUE均值,基准:24.1723 比较:21.997 差异:9.0%
-test_002.xlsx,Stair1,20,VALUE均值,基准:18.2689 比较:16.9654 差异:7.13%
-test_002.xlsx,Stair1,22,VALUE均值,基准:12.2475 比较:19.3086 差异:57.65%
-test_002.xlsx,Stair1,23,VALUE均值,基准:17.1702 比较:13.247 差异:22.85%
-test_003.xlsx,Stair1,18,VALUE均值,基准:24.2266 比较:22.9694 差异:5.19%
-test_003.xlsx,Stair1,19,VALUE均值,基准:24.1723 比较:27.135 差异:12.26%
-test_003.xlsx,Stair1,20,VALUE均值,基准:18.2689 比较:16.3579 差异:10.46%
-test_003.xlsx,Stair1,21,VALUE均值,基准:23.2064 比较:26.1902 差异:12.86%
-test_003.xlsx,Stair1,22,VALUE均值,基准:12.2475 比较:24.1408 差异:97.11%
-test_003.xlsx,Stair1,23,VALUE均值,基准:17.1702 比较:22.2078 差异:29.34%
-test_004.xlsx,Stair1,18,VALUE均值,基准:24.2266 比较:16.3508 差异:32.51%
-test_004.xlsx,Stair1,19,VALUE均值,基准:24.1723 比较:16.3782 差异:32.24%
-test_004.xlsx,Stair1,20,VALUE均值,基准:18.2689 比较:14.007 差异:23.33%
-test_004.xlsx,Stair1,22,VALUE均值,基准:12.2475 比较:13.9654 差异:14.03%
-test_004.xlsx,Stair1,23,VALUE均值,基准:17.1702 比较:26.2088 差异:52.64%
-test_005.xlsx,Stair1,18,VALUE均值,基准:24.2266 比较:18.3622 差异:24.21%
-test_005.xlsx,Stair1,19,VALUE均值,基准:24.1723 比较:14.9706 差异:38.07%
-test_005.xlsx,Stair1,21,VALUE均值,基准:23.2064 比较:29.1708 差异:25.7%
-test_005.xlsx,Stair1,22,VALUE均值,基准:12.2475 比较:29.1468 差异:137.98%
-test_005.xlsx,Stair1,23,VALUE均值,基准:17.1702 比较:21.2401 差异:23.7%
-test_002.xlsx,Stair2,19,VALUE均值,基准:48.3445 比较:43.9941 差异:9.0%
-test_002.xlsx,Stair2,20,VALUE均值,基准:36.5378 比较:33.9309 差异:7.13%
-test_002.xlsx,Stair2,22,VALUE均值,基准:24.4949 比较:38.6173 差异:57.65%
-test_002.xlsx,Stair2,23,VALUE均值,基准:34.3403 比较:26.4941 差异:22.85%
-test_003.xlsx,Stair2,18,VALUE均值,基准:48.4533 比较:45.9388 差异:5.19%
-test_003.xlsx,Stair2,19,VALUE均值,基准:48.3445 比较:54.2701 差异:12.26%
-test_003.xlsx,Stair2,20,VALUE均值,基准:36.5378 比较:32.7158 差异:10.46%
-test_003.xlsx,Stair2,21,VALUE均值,基准:46.4129 比较:52.3804 差异:12.86%
-test_003.xlsx,Stair2,22,VALUE均值,基准:24.4949 比较:48.2816 差异:97.11%
-test_003.xlsx,Stair2,23,VALUE均值,基准:34.3403 比较:44.4156 差异:29.34%
-test_004.xlsx,Stair2,18,VALUE均值,基准:48.4533 比较:32.7017 差异:32.51%
-test_004.xlsx,Stair2,19,VALUE均值,基准:48.3445 比较:32.7565 差异:32.24%
-test_004.xlsx,Stair2,20,VALUE均值,基准:36.5378 比较:28.0141 差异:23.33%
-test_004.xlsx,Stair2,22,VALUE均值,基准:24.4949 比较:27.9308 差异:14.03%
-test_004.xlsx,Stair2,23,VALUE均值,基准:34.3403 比较:52.4176 差异:52.64%
-test_005.xlsx,Stair2,18,VALUE均值,基准:48.4533 比较:36.7244 差异:24.21%
-test_005.xlsx,Stair2,19,VALUE均值,基准:48.3445 比较:29.9413 差异:38.07%
-test_005.xlsx,Stair2,21,VALUE均值,基准:46.4129 比较:58.3416 差异:25.7%
-test_005.xlsx,Stair2,22,VALUE均值,基准:24.4949 比较:58.2936 差异:137.98%
-test_005.xlsx,Stair2,23,VALUE均值,基准:34.3403 比较:42.4802 差异:23.7%
-test_002.xlsx,Duration1,19,VALUE均值,基准:14.5 比较:13.0 差异:10.34%
-test_002.xlsx,Duration1,20,VALUE均值,基准:11.5 比较:10.5 差异:8.7%
-test_002.xlsx,Duration1,22,VALUE均值,基准:8.5 比较:11.5 差异:35.29%
-test_002.xlsx,Duration1,23,VALUE均值,基准:11.0 比较:8.5 差异:22.73%
-test_003.xlsx,Duration1,18,VALUE均值,基准:14.5 比较:13.0 差异:10.34%
-test_003.xlsx,Duration1,20,VALUE均值,基准:11.5 比较:9.5 差异:17.39%
-test_003.xlsx,Duration1,22,VALUE均值,基准:8.5 比较:13.5 差异:58.82%
-test_003.xlsx,Duration1,23,VALUE均值,基准:11.0 比较:12.5 差异:13.64%
-test_004.xlsx,Duration1,18,VALUE均值,基准:14.5 比较:9.0 差异:37.93%
-test_004.xlsx,Duration1,19,VALUE均值,基准:14.5 比较:9.0 差异:37.93%
-test_004.xlsx,Duration1,20,VALUE均值,基准:11.5 比较:8.0 差异:30.43%
-test_004.xlsx,Duration1,21,VALUE均值,基准:14.0 比较:12.5 差异:10.71%
-test_004.xlsx,Duration1,22,VALUE均值,基准:8.5 比较:8.0 差异:5.88%
-test_004.xlsx,Duration1,23,VALUE均值,基准:11.0 比较:14.0 差异:27.27%
-test_005.xlsx,Duration1,18,VALUE均值,基准:14.5 比较:9.5 差异:34.48%
-test_005.xlsx,Duration1,19,VALUE均值,基准:14.5 比较:8.0 差异:44.83%
-test_005.xlsx,Duration1,20,VALUE均值,基准:11.5 比较:9.5 差异:17.39%
-test_005.xlsx,Duration1,21,VALUE均值,基准:14.0 比较:15.0 差异:7.14%
-test_005.xlsx,Duration1,22,VALUE均值,基准:8.5 比较:15.0 差异:76.47%
-test_002.xlsx,Duration2,19,VALUE均值,基准:29.0 比较:26.0 差异:10.34%
-test_002.xlsx,Duration2,20,VALUE均值,基准:23.0 比较:21.0 差异:8.7%
-test_002.xlsx,Duration2,22,VALUE均值,基准:17.0 比较:23.0 差异:35.29%
-test_002.xlsx,Duration2,23,VALUE均值,基准:22.0 比较:17.0 差异:22.73%
-test_003.xlsx,Duration2,18,VALUE均值,基准:29.0 比较:26.0 差异:10.34%
-test_003.xlsx,Duration2,20,VALUE均值,基准:23.0 比较:19.0 差异:17.39%
-test_003.xlsx,Duration2,22,VALUE均值,基准:17.0 比较:27.0 差异:58.82%
-test_003.xlsx,Duration2,23,VALUE均值,基准:22.0 比较:25.0 差异:13.64%
-test_004.xlsx,Duration2,18,VALUE均值,基准:29.0 比较:18.0 差异:37.93%
-test_004.xlsx,Duration2,19,VALUE均值,基准:29.0 比较:18.0 差异:37.93%
-test_004.xlsx,Duration2,20,VALUE均值,基准:23.0 比较:16.0 差异:30.43%
-test_004.xlsx,Duration2,21,VALUE均值,基准:28.0 比较:25.0 差异:10.71%
-test_004.xlsx,Duration2,22,VALUE均值,基准:17.0 比较:16.0 差异:5.88%
-test_004.xlsx,Duration2,23,VALUE均值,基准:22.0 比较:28.0 差异:27.27%
-test_005.xlsx,Duration2,18,VALUE均值,基准:29.0 比较:19.0 差异:34.48%
-test_005.xlsx,Duration2,19,VALUE均值,基准:29.0 比较:16.0 差异:44.83%
-test_005.xlsx,Duration2,20,VALUE均值,基准:23.0 比较:19.0 差异:17.39%
-test_005.xlsx,Duration2,21,VALUE均值,基准:28.0 比较:30.0 差异:7.14%
-test_005.xlsx,Duration2,22,VALUE均值,基准:17.0 比较:30.0 差异:76.47%
-test_002.xlsx,Temp1,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Temp1,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Temp1,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Temp1,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Temp1,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Temp1,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Temp1,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Temp1,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Temp1,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Temp1,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Temp1,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Temp1,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Temp1,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Temp1,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Temp1,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Temp1,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Temp1,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Temp1,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Temp2,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Temp2,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Temp2,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Temp2,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Temp2,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Temp2,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Temp2,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Temp2,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Temp2,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Temp2,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Temp2,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Temp2,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Temp2,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Temp2,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Temp2,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Temp2,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Temp2,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Temp2,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Status1,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Status1,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Status1,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Status1,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Status1,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Status1,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Status1,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Status1,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Status1,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Status1,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Status1,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Status1,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Status1,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Status1,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Status1,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Status1,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Status1,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Status1,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Status2,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Status2,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Status2,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Status2,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Status2,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Status2,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Status2,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Status2,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Status2,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Status2,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Status2,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Status2,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Status2,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Status2,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Status2,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Status2,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Status2,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Status2,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Pressure1,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Pressure1,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Pressure1,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Pressure1,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Pressure1,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Pressure1,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Pressure1,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Pressure1,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Pressure1,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Pressure1,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Pressure1,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Pressure1,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Pressure1,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Pressure1,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Pressure1,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Pressure1,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Pressure1,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Pressure1,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Flow1,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Flow1,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Flow1,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Flow1,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Flow1,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Flow1,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Flow1,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Flow1,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Flow1,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Flow1,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Flow1,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Flow1,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Flow1,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Flow1,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Flow1,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Flow1,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Flow1,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Flow1,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Stair1,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Stair1,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Stair1,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Stair1,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Stair1,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Stair1,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Stair1,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Stair1,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Stair1,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Stair1,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Stair1,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Stair1,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Stair1,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Stair1,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Stair1,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Stair1,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Stair1,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Stair1,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Stair2,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Stair2,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Stair2,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Stair2,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Stair2,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Stair2,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Stair2,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Stair2,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Stair2,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Stair2,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Stair2,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Stair2,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Stair2,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Stair2,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Stair2,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Stair2,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Stair2,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Stair2,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Duration1,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Duration1,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Duration1,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Duration1,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Duration1,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Duration1,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Duration1,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Duration1,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Duration1,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Duration1,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Duration1,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Duration1,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Duration1,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Duration1,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Duration1,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Duration1,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Duration1,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Duration1,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Duration2,19,时长,基准:28行 比较:25行 差异:3行
-test_002.xlsx,Duration2,20,时长,基准:22行 比较:20行 差异:2行
-test_002.xlsx,Duration2,22,时长,基准:16行 比较:22行 差异:6行
-test_002.xlsx,Duration2,23,时长,基准:21行 比较:16行 差异:5行
-test_003.xlsx,Duration2,18,时长,基准:28行 比较:25行 差异:3行
-test_003.xlsx,Duration2,20,时长,基准:22行 比较:18行 差异:4行
-test_003.xlsx,Duration2,22,时长,基准:16行 比较:26行 差异:10行
-test_003.xlsx,Duration2,23,时长,基准:21行 比较:24行 差异:3行
-test_004.xlsx,Duration2,18,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Duration2,19,时长,基准:28行 比较:17行 差异:11行
-test_004.xlsx,Duration2,20,时长,基准:22行 比较:15行 差异:7行
-test_004.xlsx,Duration2,21,时长,基准:27行 比较:24行 差异:3行
-test_004.xlsx,Duration2,23,时长,基准:21行 比较:27行 差异:6行
-test_005.xlsx,Duration2,18,时长,基准:28行 比较:18行 差异:10行
-test_005.xlsx,Duration2,19,时长,基准:28行 比较:15行 差异:13行
-test_005.xlsx,Duration2,20,时长,基准:22行 比较:18行 差异:4行
-test_005.xlsx,Duration2,21,时长,基准:27行 比较:29行 差异:2行
-test_005.xlsx,Duration2,22,时长,基准:16行 比较:29行 差异:13行
-test_002.xlsx,Status1,18,相关系数,相关系数:-0.1429
-test_002.xlsx,Status1,19,相关系数,相关系数:-0.0452
-test_002.xlsx,Status1,20,相关系数,相关系数:0.058
-test_002.xlsx,Status1,21,相关系数,相关系数:0.3493
-test_002.xlsx,Status1,23,相关系数,相关系数:-0.6299
-test_003.xlsx,Status1,18,相关系数,相关系数:0.2065
-test_003.xlsx,Status1,19,相关系数,相关系数:0.2148
-test_003.xlsx,Status1,20,相关系数,相关系数:-0.125
-test_003.xlsx,Status1,21,相关系数,相关系数:-0.1685
-test_003.xlsx,Status1,22,相关系数,相关系数:0.2
-test_003.xlsx,Status1,23,相关系数,相关系数:-0.055
-test_004.xlsx,Status1,18,相关系数,相关系数:-0.1324
-test_004.xlsx,Status1,19,相关系数,相关系数:-0.5092
-test_004.xlsx,Status1,20,相关系数,相关系数:-0.0546
-test_004.xlsx,Status1,21,相关系数,相关系数:0.0155
-test_004.xlsx,Status1,22,相关系数,相关系数:-0.3273
-test_004.xlsx,Status1,23,相关系数,相关系数:0.4812
-test_005.xlsx,Status1,18,相关系数,相关系数:-0.2548
-test_005.xlsx,Status1,19,相关系数,相关系数:0.4308
-test_005.xlsx,Status1,20,相关系数,相关系数:-0.0255
-test_005.xlsx,Status1,21,相关系数,相关系数:-0.116
-test_005.xlsx,Status1,22,相关系数,相关系数:0.0976
-test_005.xlsx,Status1,23,相关系数,相关系数:-0.1132
-test_002.xlsx,Status2,18,相关系数,相关系数:-0.1429
-test_002.xlsx,Status2,19,相关系数,相关系数:-0.0452
-test_002.xlsx,Status2,20,相关系数,相关系数:0.058
-test_002.xlsx,Status2,21,相关系数,相关系数:0.3493
-test_002.xlsx,Status2,23,相关系数,相关系数:-0.6299
-test_003.xlsx,Status2,18,相关系数,相关系数:0.2065
-test_003.xlsx,Status2,19,相关系数,相关系数:0.2148
-test_003.xlsx,Status2,20,相关系数,相关系数:-0.125
-test_003.xlsx,Status2,21,相关系数,相关系数:-0.1685
-test_003.xlsx,Status2,22,相关系数,相关系数:0.2
-test_003.xlsx,Status2,23,相关系数,相关系数:-0.055
-test_004.xlsx,Status2,18,相关系数,相关系数:-0.1324
-test_004.xlsx,Status2,19,相关系数,相关系数:-0.5092
-test_004.xlsx,Status2,20,相关系数,相关系数:-0.0546
-test_004.xlsx,Status2,21,相关系数,相关系数:0.0155
-test_004.xlsx,Status2,22,相关系数,相关系数:-0.3273
-test_004.xlsx,Status2,23,相关系数,相关系数:0.4812
-test_005.xlsx,Status2,18,相关系数,相关系数:-0.2548
-test_005.xlsx,Status2,19,相关系数,相关系数:0.4308
-test_005.xlsx,Status2,20,相关系数,相关系数:-0.0255
-test_005.xlsx,Status2,21,相关系数,相关系数:-0.116
-test_005.xlsx,Status2,22,相关系数,相关系数:0.0976
-test_005.xlsx,Status2,23,相关系数,相关系数:-0.1132
-test_002.xlsx,Temp1,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
-test_002.xlsx,Temp1,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↓↓
-test_002.xlsx,Temp1,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
-test_002.xlsx,Temp1,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
-test_003.xlsx,Temp1,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
-test_003.xlsx,Temp1,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↑↑
-test_003.xlsx,Temp1,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
-test_003.xlsx,Temp1,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
-test_004.xlsx,Temp1,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
-test_004.xlsx,Temp1,19,分段趋势,一致性:50.0% 基准:↑↑↓↓ 比较:↑↑↑↑
-test_004.xlsx,Temp1,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
-test_004.xlsx,Temp1,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
-test_005.xlsx,Temp1,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
-test_005.xlsx,Temp1,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
-test_005.xlsx,Temp1,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
-test_005.xlsx,Temp1,23,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↑↑↑
-test_002.xlsx,Temp2,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
-test_002.xlsx,Temp2,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↓↓
-test_002.xlsx,Temp2,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
-test_002.xlsx,Temp2,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
-test_003.xlsx,Temp2,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
-test_003.xlsx,Temp2,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↑↑
-test_003.xlsx,Temp2,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
-test_003.xlsx,Temp2,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
-test_004.xlsx,Temp2,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
-test_004.xlsx,Temp2,19,分段趋势,一致性:50.0% 基准:↑↑↓↓ 比较:↑↑↑↑
-test_004.xlsx,Temp2,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
-test_004.xlsx,Temp2,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
-test_005.xlsx,Temp2,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
-test_005.xlsx,Temp2,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
-test_005.xlsx,Temp2,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
-test_005.xlsx,Temp2,23,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↑↑↑
-test_002.xlsx,Status1,18,分段趋势,一致性:25.0% 基准:↓↓↓↑ 比较:↑↑↓↓
-test_002.xlsx,Status1,19,分段趋势,一致性:25.0% 基准:↑↑↑↑ 比较:→→↑↓
-test_002.xlsx,Status1,20,分段趋势,一致性:50.0% 基准:↓↓↓↑ 比较:↓↓↑↓
-test_002.xlsx,Status1,21,分段趋势,一致性:0.0% 基准:↑↓↓↑ 比较:→→→↓
-test_002.xlsx,Status1,22,分段趋势,一致性:25.0% 基准:↓→→↓ 比较:↓↓↓↑
-test_002.xlsx,Status1,23,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:→↑↑↑
-test_003.xlsx,Status1,18,分段趋势,一致性:25.0% 基准:↓↓↓↑ 比较:→↑↓↓
-test_003.xlsx,Status1,19,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
-test_003.xlsx,Status1,20,分段趋势,一致性:50.0% 基准:↓↓↓↑ 比较:→↓↓→
-test_003.xlsx,Status1,21,分段趋势,一致性:25.0% 基准:↑↓↓↑ 比较:↓↑↑↑
-test_003.xlsx,Status1,22,分段趋势,一致性:25.0% 基准:↓→→↓ 比较:↑↓→→
-test_003.xlsx,Status1,23,分段趋势,一致性:50.0% 基准:↑↓↑↓ 比较:↑↓↓→
-test_004.xlsx,Status1,18,分段趋势,一致性:50.0% 基准:↓↓↓↑ 比较:↑↓↓↓
-test_004.xlsx,Status1,19,分段趋势,一致性:25.0% 基准:↑↑↑↑ 比较:↑↓→↓
-test_004.xlsx,Status1,20,分段趋势,一致性:75.0% 基准:↓↓↓↑ 比较:↓↓↓→
-test_004.xlsx,Status1,21,分段趋势,一致性:25.0% 基准:↑↓↓↑ 比较:→↓→→
-test_004.xlsx,Status1,22,分段趋势,一致性:25.0% 基准:↓→→↓ 比较:↑↑↑↓
-test_004.xlsx,Status1,23,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↓↓↓↑
-test_005.xlsx,Status1,18,分段趋势,一致性:25.0% 基准:↓↓↓↑ 比较:↓→→↓
-test_005.xlsx,Status1,19,分段趋势,一致性:25.0% 基准:↑↑↑↑ 比较:↓↑→→
-test_005.xlsx,Status1,20,分段趋势,一致性:0.0% 基准:↓↓↓↑ 比较:→↑→→
-test_005.xlsx,Status1,21,分段趋势,一致性:25.0% 基准:↑↓↓↑ 比较:↓↑↓↓
-test_005.xlsx,Status1,22,分段趋势,一致性:0.0% 基准:↓→→↓ 比较:↑↑↓↑
-test_005.xlsx,Status1,23,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↓↓↑↓
-test_002.xlsx,Status2,18,分段趋势,一致性:25.0% 基准:↑↑↑↓ 比较:↓↓↑↑
-test_002.xlsx,Status2,19,分段趋势,一致性:25.0% 基准:↓↓↓↓ 比较:→→↓↑
-test_002.xlsx,Status2,20,分段趋势,一致性:50.0% 基准:↑↑↑↓ 比较:↑↑↓↑
-test_002.xlsx,Status2,21,分段趋势,一致性:0.0% 基准:↓↑↑↓ 比较:→→→↑
-test_002.xlsx,Status2,22,分段趋势,一致性:25.0% 基准:↑→→↑ 比较:↑↑↑↓
-test_002.xlsx,Status2,23,分段趋势,一致性:25.0% 基准:↓↑↓↑ 比较:→↓↓↓
-test_003.xlsx,Status2,18,分段趋势,一致性:25.0% 基准:↑↑↑↓ 比较:→↓↑↑
-test_003.xlsx,Status2,19,分段趋势,一致性:50.0% 基准:↓↓↓↓ 比较:↓↓↑↑
-test_003.xlsx,Status2,20,分段趋势,一致性:50.0% 基准:↑↑↑↓ 比较:→↑↑→
-test_003.xlsx,Status2,21,分段趋势,一致性:25.0% 基准:↓↑↑↓ 比较:↑↓↓↓
-test_003.xlsx,Status2,22,分段趋势,一致性:25.0% 基准:↑→→↑ 比较:↓↑→→
-test_003.xlsx,Status2,23,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↓↑↑→
-test_004.xlsx,Status2,18,分段趋势,一致性:50.0% 基准:↑↑↑↓ 比较:↓↑↑↑
-test_004.xlsx,Status2,19,分段趋势,一致性:25.0% 基准:↓↓↓↓ 比较:↓↑→↑
-test_004.xlsx,Status2,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↑→
-test_004.xlsx,Status2,21,分段趋势,一致性:25.0% 基准:↓↑↑↓ 比较:→↑→→
-test_004.xlsx,Status2,22,分段趋势,一致性:25.0% 基准:↑→→↑ 比较:↓↓↓↑
-test_004.xlsx,Status2,23,分段趋势,一致性:25.0% 基准:↓↑↓↑ 比较:↑↑↑↓
-test_005.xlsx,Status2,18,分段趋势,一致性:25.0% 基准:↑↑↑↓ 比较:↑→→↑
-test_005.xlsx,Status2,19,分段趋势,一致性:25.0% 基准:↓↓↓↓ 比较:↑↓→→
-test_005.xlsx,Status2,20,分段趋势,一致性:0.0% 基准:↑↑↑↓ 比较:→↓→→
-test_005.xlsx,Status2,21,分段趋势,一致性:25.0% 基准:↓↑↑↓ 比较:↑↓↑↑
-test_005.xlsx,Status2,22,分段趋势,一致性:0.0% 基准:↑→→↑ 比较:↓↓↑↓
-test_005.xlsx,Status2,23,分段趋势,一致性:75.0% 基准:↓↑↓↑ 比较:↑↑↓↑
-test_002.xlsx,Pressure1,19,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
-test_002.xlsx,Pressure1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
-test_002.xlsx,Pressure1,23,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
-test_003.xlsx,Pressure1,18,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
-test_003.xlsx,Pressure1,20,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
-test_003.xlsx,Pressure1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
-test_003.xlsx,Pressure1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
-test_004.xlsx,Pressure1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
-test_004.xlsx,Pressure1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
-test_004.xlsx,Pressure1,20,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
-test_004.xlsx,Pressure1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↓↑
-test_005.xlsx,Pressure1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
-test_005.xlsx,Pressure1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
-test_005.xlsx,Pressure1,20,分段趋势,一致性:50.0% 基准:↑↓↑↓ 比较:↑↓↓↑
-test_005.xlsx,Pressure1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
-test_005.xlsx,Pressure1,22,分段趋势,一致性:50.0% 基准:↑↓↑↑ 比较:↑↑↓↑
-test_002.xlsx,Flow1,19,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
-test_002.xlsx,Flow1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
-test_002.xlsx,Flow1,23,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
-test_003.xlsx,Flow1,18,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
-test_003.xlsx,Flow1,20,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
-test_003.xlsx,Flow1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
-test_003.xlsx,Flow1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
-test_004.xlsx,Flow1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
-test_004.xlsx,Flow1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
-test_004.xlsx,Flow1,20,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
-test_004.xlsx,Flow1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↓↑
-test_005.xlsx,Flow1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
-test_005.xlsx,Flow1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
-test_005.xlsx,Flow1,20,分段趋势,一致性:50.0% 基准:↑↓↑↓ 比较:↑↓↓↑
-test_005.xlsx,Flow1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
-test_005.xlsx,Flow1,22,分段趋势,一致性:50.0% 基准:↑↓↑↑ 比较:↑↑↓↑
-test_002.xlsx,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_002.xlsx,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↓↓↑↑
-test_003.xlsx,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_003.xlsx,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_003.xlsx,Stair1,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_004.xlsx,Stair1,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
-test_004.xlsx,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_004.xlsx,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_004.xlsx,Stair1,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_005.xlsx,Stair1,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
-test_005.xlsx,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_005.xlsx,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_002.xlsx,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_002.xlsx,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↓↓↑↑
-test_003.xlsx,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_003.xlsx,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_003.xlsx,Stair2,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_004.xlsx,Stair2,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
-test_004.xlsx,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_004.xlsx,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_004.xlsx,Stair2,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_005.xlsx,Stair2,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
-test_005.xlsx,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
-test_005.xlsx,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
-test_002.xlsx,Temp1,23,差分符号,一致性:66.7%
-test_003.xlsx,Temp1,19,差分符号,一致性:63.0%
-test_004.xlsx,Temp1,19,差分符号,一致性:68.8%
-test_005.xlsx,Temp1,20,差分符号,一致性:64.7%
-test_005.xlsx,Temp1,21,差分符号,一致性:65.4%
-test_002.xlsx,Temp2,23,差分符号,一致性:66.7%
-test_003.xlsx,Temp2,19,差分符号,一致性:63.0%
-test_004.xlsx,Temp2,19,差分符号,一致性:68.8%
-test_005.xlsx,Temp2,20,差分符号,一致性:64.7%
-test_005.xlsx,Temp2,21,差分符号,一致性:65.4%
-test_002.xlsx,Status1,18,差分符号,一致性:37.0%
-test_002.xlsx,Status1,19,差分符号,一致性:33.3%
-test_002.xlsx,Status1,20,差分符号,一致性:47.4%
-test_002.xlsx,Status1,21,差分符号,一致性:44.0%
-test_002.xlsx,Status1,23,差分符号,一致性:26.7%
-test_003.xlsx,Status1,18,差分符号,一致性:41.7%
-test_003.xlsx,Status1,19,差分符号,一致性:51.9%
-test_003.xlsx,Status1,20,差分符号,一致性:17.6%
-test_003.xlsx,Status1,21,差分符号,一致性:30.8%
-test_003.xlsx,Status1,22,差分符号,一致性:46.7%
-test_003.xlsx,Status1,23,差分符号,一致性:20.0%
-test_004.xlsx,Status1,18,差分符号,一致性:31.2%
-test_004.xlsx,Status1,19,差分符号,一致性:56.2%
-test_004.xlsx,Status1,20,差分符号,一致性:35.7%
-test_004.xlsx,Status1,21,差分符号,一致性:34.8%
-test_004.xlsx,Status1,22,差分符号,一致性:21.4%
-test_004.xlsx,Status1,23,差分符号,一致性:60.0%
-test_005.xlsx,Status1,18,差分符号,一致性:11.8%
-test_005.xlsx,Status1,19,差分符号,一致性:57.1%
-test_005.xlsx,Status1,20,差分符号,一致性:35.3%
-test_005.xlsx,Status1,21,差分符号,一致性:34.6%
-test_005.xlsx,Status1,22,差分符号,一致性:66.7%
-test_005.xlsx,Status1,23,差分符号,一致性:40.0%
-test_002.xlsx,Status2,18,差分符号,一致性:37.0%
-test_002.xlsx,Status2,19,差分符号,一致性:33.3%
-test_002.xlsx,Status2,20,差分符号,一致性:47.4%
-test_002.xlsx,Status2,21,差分符号,一致性:44.0%
-test_002.xlsx,Status2,23,差分符号,一致性:26.7%
-test_003.xlsx,Status2,18,差分符号,一致性:41.7%
-test_003.xlsx,Status2,19,差分符号,一致性:51.9%
-test_003.xlsx,Status2,20,差分符号,一致性:17.6%
-test_003.xlsx,Status2,21,差分符号,一致性:30.8%
-test_003.xlsx,Status2,22,差分符号,一致性:46.7%
-test_003.xlsx,Status2,23,差分符号,一致性:20.0%
-test_004.xlsx,Status2,18,差分符号,一致性:31.2%
-test_004.xlsx,Status2,19,差分符号,一致性:56.2%
-test_004.xlsx,Status2,20,差分符号,一致性:35.7%
-test_004.xlsx,Status2,21,差分符号,一致性:34.8%
-test_004.xlsx,Status2,22,差分符号,一致性:21.4%
-test_004.xlsx,Status2,23,差分符号,一致性:60.0%
-test_005.xlsx,Status2,18,差分符号,一致性:11.8%
-test_005.xlsx,Status2,19,差分符号,一致性:57.1%
-test_005.xlsx,Status2,20,差分符号,一致性:35.3%
-test_005.xlsx,Status2,21,差分符号,一致性:34.6%
-test_005.xlsx,Status2,22,差分符号,一致性:66.7%
-test_005.xlsx,Status2,23,差分符号,一致性:40.0%
-test_002.xlsx,Pressure1,20,差分符号,一致性:68.4%
-test_002.xlsx,Pressure1,21,差分符号,一致性:56.0%
-test_002.xlsx,Pressure1,22,差分符号,一致性:60.0%
-test_003.xlsx,Pressure1,19,差分符号,一致性:66.7%
-test_004.xlsx,Pressure1,21,差分符号,一致性:69.6%
-test_005.xlsx,Pressure1,20,差分符号,一致性:64.7%
-test_002.xlsx,Flow1,20,差分符号,一致性:68.4%
-test_002.xlsx,Flow1,21,差分符号,一致性:56.0%
-test_002.xlsx,Flow1,22,差分符号,一致性:60.0%
-test_003.xlsx,Flow1,19,差分符号,一致性:66.7%
-test_004.xlsx,Flow1,21,差分符号,一致性:69.6%
-test_005.xlsx,Flow1,20,差分符号,一致性:64.7%
-test_002.xlsx,Stair1,18,差分符号,一致性:63.0%
-test_002.xlsx,Stair1,19,差分符号,一致性:62.5%
-test_002.xlsx,Stair1,20,差分符号,一致性:63.2%
-test_002.xlsx,Stair1,21,差分符号,一致性:48.0%
-test_002.xlsx,Stair1,23,差分符号,一致性:60.0%
-test_003.xlsx,Stair1,18,差分符号,一致性:54.2%
-test_003.xlsx,Stair1,19,差分符号,一致性:51.9%
-test_003.xlsx,Stair1,20,差分符号,一致性:58.8%
-test_003.xlsx,Stair1,21,差分符号,一致性:65.4%
-test_003.xlsx,Stair1,23,差分符号,一致性:65.0%
-test_004.xlsx,Stair1,19,差分符号,一致性:43.8%
-test_004.xlsx,Stair1,20,差分符号,一致性:57.1%
-test_004.xlsx,Stair1,21,差分符号,一致性:69.6%
-test_004.xlsx,Stair1,22,差分符号,一致性:50.0%
-test_004.xlsx,Stair1,23,差分符号,一致性:65.0%
-test_005.xlsx,Stair1,18,差分符号,一致性:52.9%
-test_005.xlsx,Stair1,19,差分符号,一致性:64.3%
-test_005.xlsx,Stair1,20,差分符号,一致性:52.9%
-test_005.xlsx,Stair1,21,差分符号,一致性:50.0%
-test_002.xlsx,Stair2,18,差分符号,一致性:63.0%
-test_002.xlsx,Stair2,19,差分符号,一致性:62.5%
-test_002.xlsx,Stair2,20,差分符号,一致性:63.2%
-test_002.xlsx,Stair2,21,差分符号,一致性:48.0%
-test_002.xlsx,Stair2,23,差分符号,一致性:60.0%
-test_003.xlsx,Stair2,18,差分符号,一致性:54.2%
-test_003.xlsx,Stair2,19,差分符号,一致性:51.9%
-test_003.xlsx,Stair2,20,差分符号,一致性:58.8%
-test_003.xlsx,Stair2,21,差分符号,一致性:65.4%
-test_003.xlsx,Stair2,23,差分符号,一致性:65.0%
-test_004.xlsx,Stair2,19,差分符号,一致性:43.8%
-test_004.xlsx,Stair2,20,差分符号,一致性:57.1%
-test_004.xlsx,Stair2,21,差分符号,一致性:69.6%
-test_004.xlsx,Stair2,22,差分符号,一致性:50.0%
-test_004.xlsx,Stair2,23,差分符号,一致性:65.0%
-test_005.xlsx,Stair2,18,差分符号,一致性:52.9%
-test_005.xlsx,Stair2,19,差分符号,一致性:64.3%
-test_005.xlsx,Stair2,20,差分符号,一致性:52.9%
-test_005.xlsx,Stair2,21,差分符号,一致性:50.0%
+﻿比较文件,Wafer,EQP,model,recipe,Sheet名,Step,差异类型,详情
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,19,VALUE均值,基准:45.5194 比较:42.9076 差异:5.74%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,22,VALUE均值,基准:36.452 比较:41.2157 差异:13.07%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,23,VALUE均值,基准:39.7556 比较:36.7129 差异:7.65%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,18,VALUE均值,基准:45.5665 比较:43.1309 差异:5.35%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,20,VALUE均值,基准:41.127 比较:38.3742 差异:6.69%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,22,VALUE均值,基准:36.452 比较:44.3539 差异:21.68%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,23,VALUE均值,基准:39.7556 比较:42.8775 差异:7.85%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,18,VALUE均值,基准:45.5665 比较:37.2773 差异:18.19%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,19,VALUE均值,基准:45.5194 比较:37.0932 差异:18.51%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,20,VALUE均值,基准:41.127 比较:35.6833 差异:13.24%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,23,VALUE均值,基准:39.7556 比较:44.6363 差异:12.28%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,18,VALUE均值,基准:45.5665 比较:38.577 差异:15.34%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,19,VALUE均值,基准:45.5194 比较:35.927 差异:21.07%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,20,VALUE均值,基准:41.127 比较:38.5768 差异:6.2%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,22,VALUE均值,基准:36.452 比较:46.3692 差异:27.21%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,22,VALUE均值,基准:46.452 比较:51.2157 差异:10.26%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,23,VALUE均值,基准:49.7556 比较:46.7129 差异:6.12%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,20,VALUE均值,基准:51.127 比较:48.3742 差异:5.38%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,22,VALUE均值,基准:46.452 比较:54.3539 差异:17.01%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,23,VALUE均值,基准:49.7556 比较:52.8775 差异:6.27%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,18,VALUE均值,基准:55.5665 比较:47.2773 差异:14.92%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,19,VALUE均值,基准:55.5194 比较:47.0932 差异:15.18%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,20,VALUE均值,基准:51.127 比较:45.6833 差异:10.65%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,23,VALUE均值,基准:49.7556 比较:54.6363 差异:9.81%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,18,VALUE均值,基准:55.5665 比较:48.577 差异:12.58%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,19,VALUE均值,基准:55.5194 比较:45.927 差异:17.28%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,22,VALUE均值,基准:46.452 比较:56.3692 差异:21.35%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,20,VALUE均值,基准:0.4545 比较:0.75 差异:65.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,21,VALUE均值,基准:0.5556 比较:0.3462 差异:37.69%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,22,VALUE均值,基准:0.375 比较:0.5 差异:33.33%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,23,VALUE均值,基准:0.4286 比较:0.5625 差异:31.25%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,18,VALUE均值,基准:0.5 比较:0.56 差异:12.0%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,19,VALUE均值,基准:0.5 比较:0.4483 差异:10.34%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,21,VALUE均值,基准:0.5556 比较:0.3929 差异:29.29%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,22,VALUE均值,基准:0.375 比较:0.5 差异:33.33%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,23,VALUE均值,基准:0.4286 比较:0.4583 差异:6.94%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,18,VALUE均值,基准:0.5 比较:0.4118 差异:17.65%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,19,VALUE均值,基准:0.5 比较:0.5882 差异:17.65%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,20,VALUE均值,基准:0.4545 比较:0.4 差异:12.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,21,VALUE均值,基准:0.5556 比较:0.7083 差异:27.5%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,22,VALUE均值,基准:0.375 比较:0.5333 差异:42.22%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,23,VALUE均值,基准:0.4286 比较:0.5556 差异:29.63%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,18,VALUE均值,基准:0.5 比较:0.5556 差异:11.11%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,19,VALUE均值,基准:0.5 比较:0.4 差异:20.0%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,20,VALUE均值,基准:0.4545 比较:0.3889 差异:14.44%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,21,VALUE均值,基准:0.5556 比较:0.4828 差异:13.1%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,22,VALUE均值,基准:0.375 比较:0.3448 差异:8.05%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,23,VALUE均值,基准:0.4286 比较:0.619 差异:44.44%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,20,VALUE均值,基准:0.5455 比较:0.25 差异:54.17%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,21,VALUE均值,基准:0.4444 比较:0.6538 差异:47.12%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,22,VALUE均值,基准:0.625 比较:0.5 差异:20.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,23,VALUE均值,基准:0.5714 比较:0.4375 差异:23.44%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,18,VALUE均值,基准:0.5 比较:0.44 差异:12.0%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,19,VALUE均值,基准:0.5 比较:0.5517 差异:10.34%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,21,VALUE均值,基准:0.4444 比较:0.6071 差异:36.61%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,22,VALUE均值,基准:0.625 比较:0.5 差异:20.0%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,23,VALUE均值,基准:0.5714 比较:0.5417 差异:5.21%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,18,VALUE均值,基准:0.5 比较:0.5882 差异:17.65%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,19,VALUE均值,基准:0.5 比较:0.4118 差异:17.65%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,20,VALUE均值,基准:0.5455 比较:0.6 差异:10.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,21,VALUE均值,基准:0.4444 比较:0.2917 差异:34.37%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,22,VALUE均值,基准:0.625 比较:0.4667 差异:25.33%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,23,VALUE均值,基准:0.5714 比较:0.4444 差异:22.22%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,18,VALUE均值,基准:0.5 比较:0.4444 差异:11.11%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,19,VALUE均值,基准:0.5 比较:0.6 差异:20.0%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,20,VALUE均值,基准:0.5455 比较:0.6111 差异:12.04%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,21,VALUE均值,基准:0.4444 比较:0.5172 差异:16.38%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,23,VALUE均值,基准:0.5714 比较:0.381 差异:33.33%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,19,VALUE均值,基准:24.1723 比较:21.997 差异:9.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,20,VALUE均值,基准:18.2689 比较:16.9654 差异:7.13%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,22,VALUE均值,基准:12.2475 比较:19.3086 差异:57.65%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,23,VALUE均值,基准:17.1702 比较:13.247 差异:22.85%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,18,VALUE均值,基准:24.2266 比较:22.9694 差异:5.19%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,19,VALUE均值,基准:24.1723 比较:27.135 差异:12.26%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,20,VALUE均值,基准:18.2689 比较:16.3579 差异:10.46%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,21,VALUE均值,基准:23.2064 比较:26.1902 差异:12.86%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,22,VALUE均值,基准:12.2475 比较:24.1408 差异:97.11%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,23,VALUE均值,基准:17.1702 比较:22.2078 差异:29.34%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,18,VALUE均值,基准:24.2266 比较:16.3508 差异:32.51%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,19,VALUE均值,基准:24.1723 比较:16.3782 差异:32.24%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,20,VALUE均值,基准:18.2689 比较:14.007 差异:23.33%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,22,VALUE均值,基准:12.2475 比较:13.9654 差异:14.03%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,23,VALUE均值,基准:17.1702 比较:26.2088 差异:52.64%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,18,VALUE均值,基准:24.2266 比较:18.3622 差异:24.21%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,19,VALUE均值,基准:24.1723 比较:14.9706 差异:38.07%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,21,VALUE均值,基准:23.2064 比较:29.1708 差异:25.7%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,22,VALUE均值,基准:12.2475 比较:29.1468 差异:137.98%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,23,VALUE均值,基准:17.1702 比较:21.2401 差异:23.7%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,19,VALUE均值,基准:48.3445 比较:43.9941 差异:9.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,20,VALUE均值,基准:36.5378 比较:33.9309 差异:7.13%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,22,VALUE均值,基准:24.4949 比较:38.6173 差异:57.65%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,23,VALUE均值,基准:34.3403 比较:26.4941 差异:22.85%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,18,VALUE均值,基准:48.4533 比较:45.9388 差异:5.19%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,19,VALUE均值,基准:48.3445 比较:54.2701 差异:12.26%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,20,VALUE均值,基准:36.5378 比较:32.7158 差异:10.46%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,21,VALUE均值,基准:46.4129 比较:52.3804 差异:12.86%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,22,VALUE均值,基准:24.4949 比较:48.2816 差异:97.11%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,23,VALUE均值,基准:34.3403 比较:44.4156 差异:29.34%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,18,VALUE均值,基准:48.4533 比较:32.7017 差异:32.51%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,19,VALUE均值,基准:48.3445 比较:32.7565 差异:32.24%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,20,VALUE均值,基准:36.5378 比较:28.0141 差异:23.33%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,22,VALUE均值,基准:24.4949 比较:27.9308 差异:14.03%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,23,VALUE均值,基准:34.3403 比较:52.4176 差异:52.64%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,18,VALUE均值,基准:48.4533 比较:36.7244 差异:24.21%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,19,VALUE均值,基准:48.3445 比较:29.9413 差异:38.07%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,21,VALUE均值,基准:46.4129 比较:58.3416 差异:25.7%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,22,VALUE均值,基准:24.4949 比较:58.2936 差异:137.98%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,23,VALUE均值,基准:34.3403 比较:42.4802 差异:23.7%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,19,VALUE均值,基准:14.5 比较:13.0 差异:10.34%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,20,VALUE均值,基准:11.5 比较:10.5 差异:8.7%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,22,VALUE均值,基准:8.5 比较:11.5 差异:35.29%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,23,VALUE均值,基准:11.0 比较:8.5 差异:22.73%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,18,VALUE均值,基准:14.5 比较:13.0 差异:10.34%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,20,VALUE均值,基准:11.5 比较:9.5 差异:17.39%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,22,VALUE均值,基准:8.5 比较:13.5 差异:58.82%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,23,VALUE均值,基准:11.0 比较:12.5 差异:13.64%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,18,VALUE均值,基准:14.5 比较:9.0 差异:37.93%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,19,VALUE均值,基准:14.5 比较:9.0 差异:37.93%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,20,VALUE均值,基准:11.5 比较:8.0 差异:30.43%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,21,VALUE均值,基准:14.0 比较:12.5 差异:10.71%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,22,VALUE均值,基准:8.5 比较:8.0 差异:5.88%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,23,VALUE均值,基准:11.0 比较:14.0 差异:27.27%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,18,VALUE均值,基准:14.5 比较:9.5 差异:34.48%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,19,VALUE均值,基准:14.5 比较:8.0 差异:44.83%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,20,VALUE均值,基准:11.5 比较:9.5 差异:17.39%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,21,VALUE均值,基准:14.0 比较:15.0 差异:7.14%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,22,VALUE均值,基准:8.5 比较:15.0 差异:76.47%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,19,VALUE均值,基准:29.0 比较:26.0 差异:10.34%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,20,VALUE均值,基准:23.0 比较:21.0 差异:8.7%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,22,VALUE均值,基准:17.0 比较:23.0 差异:35.29%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,23,VALUE均值,基准:22.0 比较:17.0 差异:22.73%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,18,VALUE均值,基准:29.0 比较:26.0 差异:10.34%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,20,VALUE均值,基准:23.0 比较:19.0 差异:17.39%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,22,VALUE均值,基准:17.0 比较:27.0 差异:58.82%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,23,VALUE均值,基准:22.0 比较:25.0 差异:13.64%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,18,VALUE均值,基准:29.0 比较:18.0 差异:37.93%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,19,VALUE均值,基准:29.0 比较:18.0 差异:37.93%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,20,VALUE均值,基准:23.0 比较:16.0 差异:30.43%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,21,VALUE均值,基准:28.0 比较:25.0 差异:10.71%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,22,VALUE均值,基准:17.0 比较:16.0 差异:5.88%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,23,VALUE均值,基准:22.0 比较:28.0 差异:27.27%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,18,VALUE均值,基准:29.0 比较:19.0 差异:34.48%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,19,VALUE均值,基准:29.0 比较:16.0 差异:44.83%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,20,VALUE均值,基准:23.0 比较:19.0 差异:17.39%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,21,VALUE均值,基准:28.0 比较:30.0 差异:7.14%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,22,VALUE均值,基准:17.0 比较:30.0 差异:76.47%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration1,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration1,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration1,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration1,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,19,时长,基准:28行 比较:25行 差异:3行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,20,时长,基准:22行 比较:20行 差异:2行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,22,时长,基准:16行 比较:22行 差异:6行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Duration2,23,时长,基准:21行 比较:16行 差异:5行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,18,时长,基准:28行 比较:25行 差异:3行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,20,时长,基准:22行 比较:18行 差异:4行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,22,时长,基准:16行 比较:26行 差异:10行
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Duration2,23,时长,基准:21行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,18,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,19,时长,基准:28行 比较:17行 差异:11行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,20,时长,基准:22行 比较:15行 差异:7行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,21,时长,基准:27行 比较:24行 差异:3行
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Duration2,23,时长,基准:21行 比较:27行 差异:6行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,18,时长,基准:28行 比较:18行 差异:10行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,19,时长,基准:28行 比较:15行 差异:13行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,20,时长,基准:22行 比较:18行 差异:4行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,21,时长,基准:27行 比较:29行 差异:2行
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Duration2,22,时长,基准:16行 比较:29行 差异:13行
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,18,相关系数,相关系数:-0.1429
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,19,相关系数,相关系数:-0.0452
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,20,相关系数,相关系数:0.058
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,21,相关系数,相关系数:0.3493
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,23,相关系数,相关系数:-0.6299
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,18,相关系数,相关系数:0.2065
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,19,相关系数,相关系数:0.2148
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,20,相关系数,相关系数:-0.125
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,21,相关系数,相关系数:-0.1685
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,22,相关系数,相关系数:0.2
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,23,相关系数,相关系数:-0.055
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,18,相关系数,相关系数:-0.1324
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,19,相关系数,相关系数:-0.5092
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,20,相关系数,相关系数:-0.0546
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,21,相关系数,相关系数:0.0155
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,22,相关系数,相关系数:-0.3273
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,23,相关系数,相关系数:0.4812
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,18,相关系数,相关系数:-0.2548
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,19,相关系数,相关系数:0.4308
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,20,相关系数,相关系数:-0.0255
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,21,相关系数,相关系数:-0.116
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,22,相关系数,相关系数:0.0976
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,23,相关系数,相关系数:-0.1132
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,18,相关系数,相关系数:-0.1429
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,19,相关系数,相关系数:-0.0452
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,20,相关系数,相关系数:0.058
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,21,相关系数,相关系数:0.3493
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,23,相关系数,相关系数:-0.6299
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,18,相关系数,相关系数:0.2065
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,19,相关系数,相关系数:0.2148
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,20,相关系数,相关系数:-0.125
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,21,相关系数,相关系数:-0.1685
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,22,相关系数,相关系数:0.2
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,23,相关系数,相关系数:-0.055
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,18,相关系数,相关系数:-0.1324
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,19,相关系数,相关系数:-0.5092
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,20,相关系数,相关系数:-0.0546
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,21,相关系数,相关系数:0.0155
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,22,相关系数,相关系数:-0.3273
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,23,相关系数,相关系数:0.4812
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,18,相关系数,相关系数:-0.2548
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,19,相关系数,相关系数:0.4308
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,20,相关系数,相关系数:-0.0255
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,21,相关系数,相关系数:-0.116
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,22,相关系数,相关系数:0.0976
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,23,相关系数,相关系数:-0.1132
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↓↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,19,分段趋势,一致性:50.0% 基准:↑↑↓↓ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,23,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↑↑↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↓↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↓↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,19,分段趋势,一致性:50.0% 基准:↑↑↓↓ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,21,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,23,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,18,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,19,分段趋势,一致性:75.0% 基准:↑↑↓↓ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,21,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,23,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↑↑↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,18,分段趋势,一致性:25.0% 基准:↓↓↓↑ 比较:↑↑↓↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,19,分段趋势,一致性:25.0% 基准:↑↑↑↑ 比较:→→↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,20,分段趋势,一致性:50.0% 基准:↓↓↓↑ 比较:↓↓↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,21,分段趋势,一致性:0.0% 基准:↑↓↓↑ 比较:→→→↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,22,分段趋势,一致性:25.0% 基准:↓→→↓ 比较:↓↓↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,23,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:→↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,18,分段趋势,一致性:25.0% 基准:↓↓↓↑ 比较:→↑↓↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,19,分段趋势,一致性:50.0% 基准:↑↑↑↑ 比较:↑↑↓↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,20,分段趋势,一致性:50.0% 基准:↓↓↓↑ 比较:→↓↓→
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,21,分段趋势,一致性:25.0% 基准:↑↓↓↑ 比较:↓↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,22,分段趋势,一致性:25.0% 基准:↓→→↓ 比较:↑↓→→
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,23,分段趋势,一致性:50.0% 基准:↑↓↑↓ 比较:↑↓↓→
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,18,分段趋势,一致性:50.0% 基准:↓↓↓↑ 比较:↑↓↓↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,19,分段趋势,一致性:25.0% 基准:↑↑↑↑ 比较:↑↓→↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,20,分段趋势,一致性:75.0% 基准:↓↓↓↑ 比较:↓↓↓→
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,21,分段趋势,一致性:25.0% 基准:↑↓↓↑ 比较:→↓→→
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,22,分段趋势,一致性:25.0% 基准:↓→→↓ 比较:↑↑↑↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,23,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↓↓↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,18,分段趋势,一致性:25.0% 基准:↓↓↓↑ 比较:↓→→↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,19,分段趋势,一致性:25.0% 基准:↑↑↑↑ 比较:↓↑→→
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,20,分段趋势,一致性:0.0% 基准:↓↓↓↑ 比较:→↑→→
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,21,分段趋势,一致性:25.0% 基准:↑↓↓↑ 比较:↓↑↓↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,22,分段趋势,一致性:0.0% 基准:↓→→↓ 比较:↑↑↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,23,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↓↓↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,18,分段趋势,一致性:25.0% 基准:↑↑↑↓ 比较:↓↓↑↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,19,分段趋势,一致性:25.0% 基准:↓↓↓↓ 比较:→→↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,20,分段趋势,一致性:50.0% 基准:↑↑↑↓ 比较:↑↑↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,21,分段趋势,一致性:0.0% 基准:↓↑↑↓ 比较:→→→↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,22,分段趋势,一致性:25.0% 基准:↑→→↑ 比较:↑↑↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,23,分段趋势,一致性:25.0% 基准:↓↑↓↑ 比较:→↓↓↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,18,分段趋势,一致性:25.0% 基准:↑↑↑↓ 比较:→↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,19,分段趋势,一致性:50.0% 基准:↓↓↓↓ 比较:↓↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,20,分段趋势,一致性:50.0% 基准:↑↑↑↓ 比较:→↑↑→
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,21,分段趋势,一致性:25.0% 基准:↓↑↑↓ 比较:↑↓↓↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,22,分段趋势,一致性:25.0% 基准:↑→→↑ 比较:↓↑→→
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,23,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↓↑↑→
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,18,分段趋势,一致性:50.0% 基准:↑↑↑↓ 比较:↓↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,19,分段趋势,一致性:25.0% 基准:↓↓↓↓ 比较:↓↑→↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,20,分段趋势,一致性:75.0% 基准:↑↑↑↓ 比较:↑↑↑→
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,21,分段趋势,一致性:25.0% 基准:↓↑↑↓ 比较:→↑→→
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,22,分段趋势,一致性:25.0% 基准:↑→→↑ 比较:↓↓↓↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,23,分段趋势,一致性:25.0% 基准:↓↑↓↑ 比较:↑↑↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,18,分段趋势,一致性:25.0% 基准:↑↑↑↓ 比较:↑→→↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,19,分段趋势,一致性:25.0% 基准:↓↓↓↓ 比较:↑↓→→
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,20,分段趋势,一致性:0.0% 基准:↑↑↑↓ 比较:→↓→→
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,21,分段趋势,一致性:25.0% 基准:↓↑↑↓ 比较:↑↓↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,22,分段趋势,一致性:0.0% 基准:↑→→↑ 比较:↓↓↑↓
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,23,分段趋势,一致性:75.0% 基准:↓↑↓↑ 比较:↑↑↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,19,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,23,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,18,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,20,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,20,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,20,分段趋势,一致性:50.0% 基准:↑↓↑↓ 比较:↑↓↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,22,分段趋势,一致性:50.0% 基准:↑↓↑↑ 比较:↑↑↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,19,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,23,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,18,分段趋势,一致性:25.0% 基准:↑↑↓↑ 比较:↑↓↑↓
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,20,分段趋势,一致性:75.0% 基准:↑↓↑↓ 比较:↑↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↑↓
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,20,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,22,分段趋势,一致性:75.0% 基准:↑↓↑↑ 比较:↑↓↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,18,分段趋势,一致性:50.0% 基准:↑↑↓↑ 比较:↑↓↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,19,分段趋势,一致性:75.0% 基准:↑↑↓↑ 比较:↑↓↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,20,分段趋势,一致性:50.0% 基准:↑↓↑↓ 比较:↑↓↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,21,分段趋势,一致性:25.0% 基准:↑↓↑↓ 比较:↑↑↓↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,22,分段趋势,一致性:50.0% 基准:↑↓↑↑ 比较:↑↑↓↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↓↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↓↓↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,23,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,18,分段趋势,一致性:75.0% 基准:↑↑↑↑ 比较:↓↑↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,20,分段趋势,一致性:50.0% 基准:↓↑↓↑ 比较:↑↑↑↑
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,22,分段趋势,一致性:75.0% 基准:↓↑↑↑ 比较:↑↑↑↑
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp1,23,差分符号,一致性:66.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp1,19,差分符号,一致性:63.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp1,19,差分符号,一致性:68.8%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,20,差分符号,一致性:64.7%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp1,21,差分符号,一致性:65.4%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Temp2,23,差分符号,一致性:66.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Temp2,19,差分符号,一致性:63.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Temp2,19,差分符号,一致性:68.8%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,20,差分符号,一致性:64.7%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Temp2,21,差分符号,一致性:65.4%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,18,差分符号,一致性:37.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,19,差分符号,一致性:33.3%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,20,差分符号,一致性:47.4%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,21,差分符号,一致性:44.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status1,23,差分符号,一致性:26.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,18,差分符号,一致性:41.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,19,差分符号,一致性:51.9%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,20,差分符号,一致性:17.6%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,21,差分符号,一致性:30.8%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,22,差分符号,一致性:46.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status1,23,差分符号,一致性:20.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,18,差分符号,一致性:31.2%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,19,差分符号,一致性:56.2%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,20,差分符号,一致性:35.7%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,21,差分符号,一致性:34.8%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,22,差分符号,一致性:21.4%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status1,23,差分符号,一致性:60.0%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,18,差分符号,一致性:11.8%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,19,差分符号,一致性:57.1%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,20,差分符号,一致性:35.3%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,21,差分符号,一致性:34.6%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,22,差分符号,一致性:66.7%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status1,23,差分符号,一致性:40.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,18,差分符号,一致性:37.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,19,差分符号,一致性:33.3%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,20,差分符号,一致性:47.4%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,21,差分符号,一致性:44.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Status2,23,差分符号,一致性:26.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,18,差分符号,一致性:41.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,19,差分符号,一致性:51.9%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,20,差分符号,一致性:17.6%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,21,差分符号,一致性:30.8%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,22,差分符号,一致性:46.7%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Status2,23,差分符号,一致性:20.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,18,差分符号,一致性:31.2%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,19,差分符号,一致性:56.2%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,20,差分符号,一致性:35.7%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,21,差分符号,一致性:34.8%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,22,差分符号,一致性:21.4%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Status2,23,差分符号,一致性:60.0%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,18,差分符号,一致性:11.8%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,19,差分符号,一致性:57.1%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,20,差分符号,一致性:35.3%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,21,差分符号,一致性:34.6%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,22,差分符号,一致性:66.7%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Status2,23,差分符号,一致性:40.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,20,差分符号,一致性:68.4%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,21,差分符号,一致性:56.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Pressure1,22,差分符号,一致性:60.0%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Pressure1,19,差分符号,一致性:66.7%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Pressure1,21,差分符号,一致性:69.6%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Pressure1,20,差分符号,一致性:64.7%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,20,差分符号,一致性:68.4%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,21,差分符号,一致性:56.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Flow1,22,差分符号,一致性:60.0%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Flow1,19,差分符号,一致性:66.7%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Flow1,21,差分符号,一致性:69.6%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Flow1,20,差分符号,一致性:64.7%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,18,差分符号,一致性:63.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,19,差分符号,一致性:62.5%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,20,差分符号,一致性:63.2%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,21,差分符号,一致性:48.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair1,23,差分符号,一致性:60.0%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,18,差分符号,一致性:54.2%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,19,差分符号,一致性:51.9%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,20,差分符号,一致性:58.8%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,21,差分符号,一致性:65.4%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair1,23,差分符号,一致性:65.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,19,差分符号,一致性:43.8%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,20,差分符号,一致性:57.1%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,21,差分符号,一致性:69.6%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,22,差分符号,一致性:50.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair1,23,差分符号,一致性:65.0%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,18,差分符号,一致性:52.9%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,19,差分符号,一致性:64.3%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,20,差分符号,一致性:52.9%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair1,21,差分符号,一致性:50.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,18,差分符号,一致性:63.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,19,差分符号,一致性:62.5%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,20,差分符号,一致性:63.2%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,21,差分符号,一致性:48.0%
+test_002.xlsx,W002,EQP3,Model1,Recipe3,Stair2,23,差分符号,一致性:60.0%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,18,差分符号,一致性:54.2%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,19,差分符号,一致性:51.9%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,20,差分符号,一致性:58.8%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,21,差分符号,一致性:65.4%
+test_003.xlsx,W003,EQP1,Model2,Recipe4,Stair2,23,差分符号,一致性:65.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,19,差分符号,一致性:43.8%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,20,差分符号,一致性:57.1%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,21,差分符号,一致性:69.6%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,22,差分符号,一致性:50.0%
+test_004.xlsx,W004,EQP2,Model1,Recipe1,Stair2,23,差分符号,一致性:65.0%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,18,差分符号,一致性:52.9%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,19,差分符号,一致性:64.3%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,20,差分符号,一致性:52.9%
+test_005.xlsx,W005,EQP3,Model2,Recipe2,Stair2,21,差分符号,一致性:50.0%

@@ -1,7 +1,13 @@
 {
     "folder_path": "./data",
-    "baseline_file": "test_001.xlsx",
+    "baseline_files": {
+        "03P": "baseline_03P.xlsx",
+        "04P": "baseline_04P.xlsx"
+    },
+    "recipe_column": "recipe",
     "sheets": [],
+    "meta_sheet": "metaInfo",
+    "meta_columns": ["Wafer", "EQP", "model", "recipe"],
     "step_column": "STEP",
     "value_column": "VALUE",
     "threshold_percent": 5,
