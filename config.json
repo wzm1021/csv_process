@@ -1,6 +1,6 @@
 {
     "folder_path": "./data",
-    "baseline_file": "baseline.xlsx",
+    "baseline_file": "test_001.xlsx",
     "sheets": [],
     "step_column": "STEP",
     "value_column": "VALUE",
