@@ -71,32 +71,25 @@ def get_step_groups(steps_config: list[str]) -> dict[str, list[str]]:
 
 def read_all_sheets_fast(file_path: str, sheets_to_read: list[str]) -> dict[str, pd.DataFrame]:
     """
-    使用openpyxl read_only模式快速读取多个sheet
-    一次打开文件，读取所有需要的sheet
+    使用pandas一次性读取多个sheet
     """
     result = {}
     try:
-        wb = load_workbook(file_path, read_only=True, data_only=True)
-        available_sheets = set(wb.sheetnames)
+        # 使用pandas读取，指定需要的sheet
+        xl = pd.ExcelFile(file_path, engine='openpyxl')
+        available_sheets = set(xl.sheet_names)
 
         for sheet_name in sheets_to_read:
             if sheet_name not in available_sheets:
                 continue
-
-            ws = wb[sheet_name]
-            data = list(ws.iter_rows(values_only=True))
-
-            if len(data) < 2:
+            try:
+                result[sheet_name] = xl.parse(sheet_name)
+            except Exception:
                 result[sheet_name] = pd.DataFrame()
-                continue
 
-            headers = data[0]
-            rows = data[1:]
-            result[sheet_name] = pd.DataFrame(rows, columns=headers)
-
-        wb.close()
+        xl.close()
     except Exception as e:
-        pass
+        print(f"读取文件失败 {file_path}: {e}")
 
     return result
 
