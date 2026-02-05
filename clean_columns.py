@@ -1,6 +1,6 @@
 """
 清理xlsx文件中的无效列
-删除空列和值完全相同的列
+删除空列、值完全相同的列、含空值的列
 """
 
 import pandas as pd
@@ -8,13 +8,14 @@ import argparse
 from pathlib import Path
 
 
-def clean_columns(input_file: str, output_file: str = None) -> tuple[int, int, list[str]]:
+def clean_columns(input_file: str, output_file: str = None, remove_has_null: bool = False) -> tuple[int, int, list[str]]:
     """
     清理xlsx文件中的空列和值相同的列
     
     参数:
         input_file: 输入文件路径
         output_file: 输出文件路径（默认覆盖原文件）
+        remove_has_null: 是否删除含空值的列（默认False）
     
     返回:
         (原列数, 清理后列数, 删除的列名列表)
@@ -31,6 +32,12 @@ def clean_columns(input_file: str, output_file: str = None) -> tuple[int, int, l
         # 检查是否为空列
         if df[col].isna().all():
             removed_cols.append(f"{col} (空列)")
+            continue
+
+        # 检查是否含空值
+        if remove_has_null and df[col].isna().any():
+            null_count = df[col].isna().sum()
+            removed_cols.append(f"{col} (含空值: {null_count}个)")
             continue
 
         # 检查是否所有值相同（忽略空值）
@@ -51,6 +58,7 @@ def main():
     parser = argparse.ArgumentParser(description='清理xlsx文件中的空列和值相同的列')
     parser.add_argument('input', help='输入xlsx文件路径')
     parser.add_argument('-o', '--output', help='输出文件路径（默认覆盖原文件）')
+    parser.add_argument('--remove-null', action='store_true', help='删除含空值的列')
     args = parser.parse_args()
 
     input_file = args.input
@@ -61,7 +69,9 @@ def main():
         return
 
     print(f"处理文件: {input_file}")
-    original, remaining, removed = clean_columns(input_file, output_file)
+    if args.remove_null:
+        print("启用: 删除含空值的列")
+    original, remaining, removed = clean_columns(input_file, output_file, args.remove_null)
 
     print(f"\n原列数: {original}")
     print(f"保留列数: {remaining}")
