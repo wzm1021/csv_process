@@ -1,12 +1,16 @@
 """
 XLSX文件VALUE差异分析工具
 比较多个xlsx文件中相同sheet、相同step的VALUE值差异、持续时长差异和趋势差异
+优化版本：使用openpyxl read_only模式 + 多进程并行 + 内存缓存
 """
 
 import json
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from openpyxl import load_workbook
+from concurrent.futures import ProcessPoolExecutor, as_completed
+import multiprocessing
 
 
 def load_config(config_path: str = "config.json") -> dict:
@@ -28,70 +32,110 @@ def get_xlsx_files(folder_path: str, baseline_file: str) -> tuple[str, list[str]
     return str(baseline_path), compare_files
 
 
-def get_sheet_names(file_path: str, specified_sheets: list[str]) -> list[str]:
-    """获取要分析的sheet名称列表"""
-    xl = pd.ExcelFile(file_path)
+def get_sheet_names_fast(file_path: str, specified_sheets: list[str]) -> list[str]:
+    """获取要分析的sheet名称列表（使用openpyxl）"""
+    wb = load_workbook(file_path, read_only=True)
+    all_sheets = wb.sheetnames
+    wb.close()
+
     if specified_sheets:
-        return [s for s in specified_sheets if s in xl.sheet_names]
-    return xl.sheet_names
+        return [s for s in specified_sheets if s in all_sheets]
+    return all_sheets
+
+
+def read_all_sheets_fast(file_path: str, sheets_to_read: list[str]) -> dict[str, pd.DataFrame]:
+    """使用openpyxl read_only模式快速读取多个sheet"""
+    result = {}
+    try:
+        wb = load_workbook(file_path, read_only=True, data_only=True)
+        available_sheets = set(wb.sheetnames)
+
+        for sheet_name in sheets_to_read:
+            if sheet_name not in available_sheets:
+                continue
+
+            ws = wb[sheet_name]
+            data = list(ws.iter_rows(values_only=True))
+
+            if len(data) < 2:
+                result[sheet_name] = pd.DataFrame()
+                continue
+
+            headers = data[0]
+            rows = data[1:]
+            result[sheet_name] = pd.DataFrame(rows, columns=headers)
+
+        wb.close()
+    except Exception as e:
+        pass
+
+    return result
 
 
 def normalize_step_value(step_val) -> str | None:
-    """
-    标准化STEP列的值，将数字或文本转为整数字符串
-    例如：18.0 -> "18", 18 -> "18", "18" -> "18", "18.0" -> "18"
-    """
+    """标准化STEP列的值，将数字或文本转为整数字符串"""
     if pd.isna(step_val):
         return None
-    # 如果是数字类型，转为整数再转字符串
     if isinstance(step_val, (int, float)):
         return str(int(step_val))
-    # 如果是文本类型，尝试转为数字再转为整数字符串
     try:
         return str(int(float(str(step_val).strip())))
     except (ValueError, TypeError):
         return str(step_val).strip()
 
 
-def parse_value(val) -> float | None:
-    """
-    将VALUE列的值转换为float类型
-    支持数字类型和文本类型（如 "123.45"）
-    """
-    if pd.isna(val):
-        return None
-    if isinstance(val, (int, float)):
-        return float(val)
-    # 文本类型，尝试转换
-    try:
-        return float(str(val).strip())
-    except (ValueError, TypeError):
-        return None
-
-
-def read_sheet_data(file_path: str, sheet_name: str, step_col: str, value_col: str) -> dict:
-    """
-    读取sheet数据，返回 {step: {'values': [values], 'count': 行数}} 字典
-    """
-    try:
-        df = pd.read_excel(file_path, sheet_name=sheet_name)
-        if step_col not in df.columns or value_col not in df.columns:
-            return {}
-
-        result = {}
-        for _, row in df.iterrows():
-            step_key = normalize_step_value(row[step_col])
-            value = parse_value(row[value_col])
-            if step_key is not None and value is not None:
-                if step_key not in result:
-                    result[step_key] = {'values': [], 'count': 0}
-                result[step_key]['values'].append(value)
-                result[step_key]['count'] += 1
-
-        return result
-    except Exception as e:
-        print(f"读取 {file_path} - {sheet_name} 失败: {e}")
+def parse_sheet_data_vectorized(df: pd.DataFrame, step_col: str, value_col: str) -> dict:
+    """向量化解析sheet数据，返回 {step: {'values': [values], 'count': 行数}} 字典"""
+    if df.empty or step_col not in df.columns or value_col not in df.columns:
         return {}
+
+    df = df.copy()
+
+    # 向量化标准化STEP列
+    def normalize_step(val):
+        if pd.isna(val):
+            return None
+        if isinstance(val, (int, float)):
+            return str(int(val))
+        try:
+            return str(int(float(str(val).strip())))
+        except:
+            return str(val).strip()
+
+    df['_step_norm'] = df[step_col].apply(normalize_step)
+    df['_value_num'] = pd.to_numeric(df[value_col], errors='coerce')
+
+    # 过滤有效数据
+    valid = df.dropna(subset=['_step_norm', '_value_num'])
+
+    result = {}
+    for step, group in valid.groupby('_step_norm'):
+        values = group['_value_num'].tolist()
+        result[step] = {'values': values, 'count': len(values)}
+
+    return result
+
+
+def load_file_data(file_path: str, sheets: list[str], step_col: str, value_col: str) -> dict:
+    """加载单个文件的所有sheet数据"""
+    sheets_df = read_all_sheets_fast(file_path, sheets)
+    file_data = {}
+
+    for sheet_name, df in sheets_df.items():
+        file_data[sheet_name] = parse_sheet_data_vectorized(df, step_col, value_col)
+
+    return file_data
+
+
+def load_file_wrapper(args: tuple) -> tuple[str, dict]:
+    """多进程包装函数"""
+    file_path, sheets, step_col, value_col = args
+    try:
+        data = load_file_data(file_path, sheets, step_col, value_col)
+        return (file_path, data)
+    except Exception as e:
+        print(f"加载文件失败 {file_path}: {e}")
+        return (file_path, {})
 
 
 def calculate_value_diff(baseline_values: list[float], compare_values: list[float]) -> tuple[float, float, float]:
@@ -227,9 +271,9 @@ def trend_to_str(trends: list[int]) -> str:
 
 
 def analyze_files(config: dict) -> dict:
-    """分析所有文件，返回各类差异结果"""
+    """分析所有文件，返回各类差异结果（优化版：先加载所有数据到内存）"""
     baseline_file, compare_files = get_xlsx_files(config["folder_path"], config["baseline_file"])
-    sheets = get_sheet_names(baseline_file, config.get("sheets", []))
+    sheets = get_sheet_names_fast(baseline_file, config.get("sheets", []))
 
     # 阈值配置
     value_threshold = config["threshold_percent"]
@@ -261,14 +305,41 @@ def analyze_files(config: dict) -> dict:
     print(f"差分符号一致性阈值: {diff_sign_threshold}%")
     print("-" * 60)
 
+    # 第一阶段：并行加载所有文件数据到内存
+    print("阶段1: 并行加载文件数据...")
+    all_files = [baseline_file] + compare_files
+    num_workers = min(multiprocessing.cpu_count(), len(all_files))
+    print(f"使用 {num_workers} 个并行进程")
+
+    tasks = [(f, sheets, step_col, value_col) for f in all_files]
+    files_data = {}
+
+    with ProcessPoolExecutor(max_workers=num_workers) as executor:
+        futures = {executor.submit(load_file_wrapper, task): task[0] for task in tasks}
+        completed = 0
+
+        for future in as_completed(futures):
+            completed += 1
+            file_path, data = future.result()
+            files_data[file_path] = data
+
+            if completed % 50 == 0 or completed == len(all_files):
+                print(f"  加载进度: {completed}/{len(all_files)} ({completed*100//len(all_files)}%)")
+
+    print(f"数据加载完成，开始分析比较...")
+
+    # 第二阶段：内存中比较分析
+    baseline_data_all = files_data.get(baseline_file, {})
+
     for sheet in sheets:
-        baseline_data = read_sheet_data(baseline_file, sheet, step_col, value_col)
+        baseline_data = baseline_data_all.get(sheet, {})
         if not baseline_data:
             continue
 
         for compare_file in compare_files:
             compare_name = Path(compare_file).name
-            compare_data = read_sheet_data(compare_file, sheet, step_col, value_col)
+            compare_data_all = files_data.get(compare_file, {})
+            compare_data = compare_data_all.get(sheet, {})
             if not compare_data:
                 continue
 

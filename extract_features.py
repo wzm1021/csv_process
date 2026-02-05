@@ -1,6 +1,7 @@
 """
 XLSX文件特征提取工具
 从多个xlsx文件中提取参数特征，生成汇总表
+优化版本：使用openpyxl read_only模式 + 多进程并行 + 向量化操作
 """
 
 import json
@@ -9,6 +10,9 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 from scipy.optimize import curve_fit
+from openpyxl import load_workbook
+from concurrent.futures import ProcessPoolExecutor, as_completed
+import multiprocessing
 
 
 def load_config(config_path: str = "config_feature.json") -> dict:
@@ -26,7 +30,6 @@ def parse_step_config(steps_config: list[str]) -> list[str]:
     result = []
     for item in steps_config:
         if "-" in item:
-            # 范围格式：STEP20-23 -> 20,21,22,23
             match = re.match(r"(\D*)(\d+)-(\d+)", item)
             if match:
                 start = int(match.group(2))
@@ -34,7 +37,6 @@ def parse_step_config(steps_config: list[str]) -> list[str]:
                 for i in range(start, end + 1):
                     result.append(str(i))
         else:
-            # 单个格式：STEP18 -> 18
             match = re.match(r"(\D*)(\d+)$", item)
             if match:
                 result.append(match.group(2))
@@ -47,99 +49,96 @@ def get_step_groups(steps_config: list[str]) -> dict[str, list[str]]:
     """
     获取STEP分组，用于合并分析
     返回 {组名: [STEP值列表]}
-    配置格式：STEP18 表示匹配STEP列值为18，STEP20-23 表示匹配STEP列值为20,21,22,23并合并分析
-    例如：["STEP18", "STEP20-23"] -> {"STEP18": ["18"], "STEP20-23": ["20", "21", "22", "23"]}
     """
     groups = {}
     for item in steps_config:
         if "-" in item:
-            # 范围格式：STEP20-23 -> 提取20到23
             match = re.match(r"(\D*)(\d+)-(\d+)", item)
             if match:
                 start = int(match.group(2))
                 end = int(match.group(3))
-                # 只保留数字部分作为匹配值
                 steps = [str(i) for i in range(start, end + 1)]
                 groups[item] = steps
         else:
-            # 单个格式：STEP18 -> 提取18
             match = re.match(r"(\D*)(\d+)$", item)
             if match:
                 num = match.group(2)
                 groups[item] = [num]
             else:
-                # 如果没有数字，保持原样
                 groups[item] = [item]
     return groups
 
 
-def read_meta_info(file_path: str, meta_sheet: str, meta_columns: list[str]) -> dict:
-    """读取metaInfo sheet中的元数据"""
+def read_all_sheets_fast(file_path: str, sheets_to_read: list[str]) -> dict[str, pd.DataFrame]:
+    """
+    使用openpyxl read_only模式快速读取多个sheet
+    一次打开文件，读取所有需要的sheet
+    """
+    result = {}
     try:
-        df = pd.read_excel(file_path, sheet_name=meta_sheet)
-        result = {}
-        for col in meta_columns:
-            if col in df.columns:
-                value = df[col].iloc[0] if len(df) > 0 else ""
-                result[col] = value if pd.notna(value) else ""
-            else:
-                result[col] = ""
-        return result
+        wb = load_workbook(file_path, read_only=True, data_only=True)
+        available_sheets = set(wb.sheetnames)
+
+        for sheet_name in sheets_to_read:
+            if sheet_name not in available_sheets:
+                continue
+
+            ws = wb[sheet_name]
+            data = list(ws.iter_rows(values_only=True))
+
+            if len(data) < 2:
+                result[sheet_name] = pd.DataFrame()
+                continue
+
+            headers = data[0]
+            rows = data[1:]
+            result[sheet_name] = pd.DataFrame(rows, columns=headers)
+
+        wb.close()
     except Exception as e:
-        print(f"读取元数据失败 {file_path}: {e}")
-        return {col: "" for col in meta_columns}
+        pass
+
+    return result
 
 
-def normalize_step_value(step_val) -> str:
-    """
-    标准化STEP列的值，将数字或文本转为整数字符串
-    例如：18.0 -> "18", 18 -> "18", "18" -> "18", "18.0" -> "18"
-    """
-    if pd.isna(step_val):
-        return ""
-    # 如果是数字类型，转为整数再转字符串
-    if isinstance(step_val, (int, float)):
-        return str(int(step_val))
-    # 如果是文本类型，尝试转为数字再转为整数字符串
-    try:
-        return str(int(float(str(step_val).strip())))
-    except (ValueError, TypeError):
-        return str(step_val).strip()
-
-
-def parse_value(val) -> float | None:
-    """
-    将VALUE列的值转换为float类型
-    支持数字类型和文本类型（如 "123.45"）
-    """
-    if pd.isna(val):
-        return None
-    if isinstance(val, (int, float)):
-        return float(val)
-    # 文本类型，尝试转换
-    try:
-        return float(str(val).strip())
-    except (ValueError, TypeError):
-        return None
-
-
-def read_sheet_data(file_path: str, sheet_name: str, step_col: str, value_col: str, target_steps: list[str]) -> list[float]:
-    """读取指定sheet中目标STEP的VALUE数据"""
-    try:
-        df = pd.read_excel(file_path, sheet_name=sheet_name)
-        if step_col not in df.columns or value_col not in df.columns:
-            return []
-
-        values = []
-        for _, row in df.iterrows():
-            step = normalize_step_value(row[step_col])
-            value = parse_value(row[value_col])
-            if step in target_steps and value is not None:
-                values.append(value)
-
-        return values
-    except Exception as e:
+def extract_values_vectorized(df: pd.DataFrame, step_col: str, value_col: str, target_steps: set[str]) -> list[float]:
+    """使用向量化操作提取目标STEP的VALUE数据"""
+    if df.empty or step_col not in df.columns or value_col not in df.columns:
         return []
+
+    df = df.copy()
+
+    # 向量化标准化STEP列
+    def normalize_step(val):
+        if pd.isna(val):
+            return ""
+        if isinstance(val, (int, float)):
+            return str(int(val))
+        try:
+            return str(int(float(str(val).strip())))
+        except:
+            return str(val).strip()
+
+    df['_step_norm'] = df[step_col].apply(normalize_step)
+
+    # 向量化筛选和转换
+    mask = df['_step_norm'].isin(target_steps)
+    filtered = df.loc[mask, value_col]
+
+    values = pd.to_numeric(filtered, errors='coerce').dropna().tolist()
+    return values
+
+
+def read_meta_info_from_df(df: pd.DataFrame, meta_columns: list[str]) -> dict:
+    """从DataFrame读取元数据"""
+    result = {}
+    for col in meta_columns:
+        if col in df.columns and len(df) > 0:
+            value = df[col].iloc[0]
+            result[col] = value if pd.notna(value) else ""
+        else:
+            result[col] = ""
+    return result
 
 
 def is_stable(values: list[float], threshold: float) -> bool:
@@ -192,6 +191,23 @@ def count_fluctuations(values: list[float]) -> int:
         if values[i] != values[i-1]:
             count += 1
     return count
+
+
+def count_stair_steps(values: list[float], threshold: float) -> int:
+    """
+    统计阶梯型数据的台阶数量
+    通过检测差分超过阈值的跳变点来识别台阶
+    台阶数量 = 跳变次数 + 1
+    """
+    if len(values) < 2:
+        return 1 if values else 0
+
+    jump_count = 0
+    for i in range(1, len(values)):
+        if abs(values[i] - values[i-1]) > threshold:
+            jump_count += 1
+
+    return jump_count + 1
 
 
 def find_stable_point(values: list[float], threshold: float) -> int:
@@ -300,11 +316,22 @@ def analyze_trend(values: list[float], threshold: float) -> dict:
 
 
 def process_file(file_path: str, config: dict) -> dict:
-    """处理单个文件，返回特征字典"""
+    """处理单个文件，返回特征字典（优化版：一次读取所有sheet）"""
     result = {}
 
+    # 收集所有需要读取的sheet
+    all_sheets = [config["meta_sheet"]]
+    all_sheets.extend(config.get("temperature_sheets", []))
+    all_sheets.extend(config.get("binary_sheets", []))
+    all_sheets.extend(config.get("other_sheets", []))
+    all_sheets.extend(config.get("stair_sheets", []))
+
+    # 一次性读取所有sheet
+    sheets_data = read_all_sheets_fast(file_path, all_sheets)
+
     # 读取元数据
-    meta = read_meta_info(file_path, config["meta_sheet"], config["meta_columns"])
+    meta_df = sheets_data.get(config["meta_sheet"], pd.DataFrame())
+    meta = read_meta_info_from_df(meta_df, config["meta_columns"])
     result.update(meta)
 
     step_groups = get_step_groups(config["steps_to_analyze"])
@@ -314,9 +341,11 @@ def process_file(file_path: str, config: dict) -> dict:
 
     # 处理温度类sheet
     for sheet in config.get("temperature_sheets", []):
+        df = sheets_data.get(sheet, pd.DataFrame())
         for group_name, steps in step_groups.items():
             col_prefix = f"{sheet}_{group_name}"
-            values = read_sheet_data(file_path, sheet, step_col, value_col, steps)
+            target_steps = set(steps)
+            values = extract_values_vectorized(df, step_col, value_col, target_steps)
 
             if not values:
                 result[f"{col_prefix}_rate"] = None
@@ -333,18 +362,21 @@ def process_file(file_path: str, config: dict) -> dict:
 
     # 处理0/1类sheet
     for sheet in config.get("binary_sheets", []):
+        df = sheets_data.get(sheet, pd.DataFrame())
         for group_name, steps in step_groups.items():
             col_prefix = f"{sheet}_{group_name}"
-            values = read_sheet_data(file_path, sheet, step_col, value_col, steps)
-
+            target_steps = set(steps)
+            values = extract_values_vectorized(df, step_col, value_col, target_steps)
             fluctuations = count_fluctuations(values) if values else 0
             result[f"{col_prefix}_fluctuations"] = fluctuations
 
     # 处理其他类sheet
     for sheet in config.get("other_sheets", []):
+        df = sheets_data.get(sheet, pd.DataFrame())
         for group_name, steps in step_groups.items():
             col_prefix = f"{sheet}_{group_name}"
-            values = read_sheet_data(file_path, sheet, step_col, value_col, steps)
+            target_steps = set(steps)
+            values = extract_values_vectorized(df, step_col, value_col, target_steps)
 
             if not values:
                 result[f"{col_prefix}_slope"] = None
@@ -360,14 +392,48 @@ def process_file(file_path: str, config: dict) -> dict:
                 result[f"{col_prefix}_slope"] = round(trend["slope"], 6) if trend["slope"] else None
                 result[f"{col_prefix}_fluctuations"] = None
             else:
-                result[f"{col_prefix}_slope"] = None
+                # 波动较大时，也计算整体斜率
+                x = np.arange(len(values))
+                slope = np.polyfit(x, values, 1)[0]
+                result[f"{col_prefix}_slope"] = round(slope, 6)
                 result[f"{col_prefix}_fluctuations"] = trend["fluctuations_before_stable"]
 
             result[f"{col_prefix}_stable_max"] = round(trend["stable_max"], 4) if trend["stable_max"] else None
             result[f"{col_prefix}_max"] = round(trend["overall_max"], 4) if trend["overall_max"] else None
             result[f"{col_prefix}_min"] = round(trend["overall_min"], 4) if trend["overall_min"] else None
 
+    # 处理阶梯型sheet
+    stair_threshold = config.get("stair_change_threshold", 0.5)
+    for sheet in config.get("stair_sheets", []):
+        df = sheets_data.get(sheet, pd.DataFrame())
+        for group_name, steps in step_groups.items():
+            col_prefix = f"{sheet}_{group_name}"
+            target_steps = set(steps)
+            values = extract_values_vectorized(df, step_col, value_col, target_steps)
+
+            if not values:
+                result[f"{col_prefix}_stair_count"] = None
+                result[f"{col_prefix}_max"] = None
+                result[f"{col_prefix}_min"] = None
+                continue
+
+            result[f"{col_prefix}_stair_count"] = count_stair_steps(values, stair_threshold)
+            result[f"{col_prefix}_max"] = round(max(values), 4)
+            result[f"{col_prefix}_min"] = round(min(values), 4)
+
     return result
+
+
+def process_file_wrapper(args: tuple) -> dict:
+    """多进程包装函数"""
+    file_path, config = args
+    try:
+        result = process_file(file_path, config)
+        result["源文件"] = Path(file_path).name
+        return result
+    except Exception as e:
+        print(f"处理文件失败 {file_path}: {e}")
+        return {"源文件": Path(file_path).name}
 
 
 def main():
@@ -380,18 +446,30 @@ def main():
     print(f"温度类sheet: {config.get('temperature_sheets', [])}")
     print(f"0/1类sheet: {config.get('binary_sheets', [])}")
     print(f"其他类sheet: {config.get('other_sheets', [])}")
+    print(f"阶梯类sheet: {config.get('stair_sheets', [])}")
+
+    # 使用CPU核心数的进程池
+    num_workers = min(multiprocessing.cpu_count(), len(xlsx_files))
+    print(f"使用 {num_workers} 个并行进程")
     print("-" * 60)
 
     all_results = []
-    for file_path in xlsx_files:
-        print(f"处理: {file_path.name}")
-        result = process_file(str(file_path), config)
-        result["源文件"] = file_path.name
-        all_results.append(result)
+    tasks = [(str(f), config) for f in xlsx_files]
+
+    with ProcessPoolExecutor(max_workers=num_workers) as executor:
+        futures = {executor.submit(process_file_wrapper, task): task[0] for task in tasks}
+        completed = 0
+
+        for future in as_completed(futures):
+            completed += 1
+            result = future.result()
+            all_results.append(result)
+
+            if completed % 50 == 0 or completed == len(xlsx_files):
+                print(f"进度: {completed}/{len(xlsx_files)} ({completed*100//len(xlsx_files)}%)")
 
     if all_results:
         df = pd.DataFrame(all_results)
-        # 调整列顺序，源文件和元数据列放前面
         meta_cols = ["源文件"] + config["meta_columns"]
         other_cols = [c for c in df.columns if c not in meta_cols]
         df = df[meta_cols + other_cols]
