@@ -10,6 +10,9 @@
 
     "steps_to_analyze": ["STEP18", "STEP19", "STEP20-23"],
 
+    "mean_only_mode": false,
+    "mean_only_sheets": ["Temp1", "Temp2", "Status1", "Status2", "Pressure1", "Flow1", "Stair1", "Stair2", "Duration1", "Duration2"],
+
     "temperature_sheets": ["Temp1", "Temp2"],
     "binary_sheets": ["Status1", "Status2"],
     "other_sheets": ["Pressure1", "Flow1"],

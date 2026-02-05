@@ -343,8 +343,47 @@ def analyze_trend(values: list[float], threshold: float) -> dict:
         }
 
 
+def process_file_mean_only(file_path: str, config: dict) -> dict:
+    """仅提取均值模式：计算每个sheet每个STEP的VALUE均值"""
+    result = {}
+
+    # 收集需要读取的sheet
+    all_sheets = [config["meta_sheet"]]
+    all_sheets.extend(config.get("mean_only_sheets", []))
+
+    sheets_data = read_all_sheets_fast(file_path, all_sheets)
+
+    # 读取元数据
+    meta_df = sheets_data.get(config["meta_sheet"], pd.DataFrame())
+    meta = read_meta_info_from_df(meta_df, config["meta_columns"])
+    result.update(meta)
+
+    step_groups = get_step_groups(config["steps_to_analyze"])
+    step_col = config["step_column"]
+    value_col = config["value_column"]
+
+    # 对每个sheet提取每个STEP组的均值
+    for sheet in config.get("mean_only_sheets", []):
+        df = sheets_data.get(sheet, pd.DataFrame())
+        for group_name, steps in step_groups.items():
+            col_name = f"{sheet}_{group_name}_mean"
+            target_steps = set(steps)
+            values = extract_values_vectorized(df, step_col, value_col, target_steps)
+
+            if values:
+                result[col_name] = round(np.mean(values), 6)
+            else:
+                result[col_name] = None
+
+    return result
+
+
 def process_file(file_path: str, config: dict) -> dict:
     """处理单个文件，返回特征字典（优化版：一次读取所有sheet）"""
+    # 仅提取均值模式
+    if config.get("mean_only_mode", False):
+        return process_file_mean_only(file_path, config)
+
     result = {}
 
     # 收集所有需要读取的sheet
@@ -481,11 +520,17 @@ def main():
 
     print(f"找到 {len(xlsx_files)} 个xlsx文件")
     print(f"STEP配置: {config['steps_to_analyze']}")
-    print(f"温度类sheet: {config.get('temperature_sheets', [])}")
-    print(f"0/1类sheet: {config.get('binary_sheets', [])}")
-    print(f"其他类sheet: {config.get('other_sheets', [])}")
-    print(f"阶梯类sheet: {config.get('stair_sheets', [])}")
-    print(f"持续时间sheet: {config.get('duration_sheets', [])}")
+
+    if config.get("mean_only_mode", False):
+        print(f"模式: 仅提取均值")
+        print(f"均值提取sheet: {config.get('mean_only_sheets', [])}")
+    else:
+        print(f"模式: 完整特征提取")
+        print(f"温度类sheet: {config.get('temperature_sheets', [])}")
+        print(f"0/1类sheet: {config.get('binary_sheets', [])}")
+        print(f"其他类sheet: {config.get('other_sheets', [])}")
+        print(f"阶梯类sheet: {config.get('stair_sheets', [])}")
+        print(f"持续时间sheet: {config.get('duration_sheets', [])}")
 
     # 使用CPU核心数的进程池
     num_workers = min(multiprocessing.cpu_count(), len(xlsx_files))
