@@ -344,7 +344,7 @@ def analyze_trend(values: list[float], threshold: float) -> dict:
 
 
 def process_file_mean_only(file_path: str, config: dict) -> dict:
-    """仅提取均值模式：计算每个sheet每个STEP的VALUE均值"""
+    """仅提取均值模式：计算每个sheet每个STEP的VALUE均值和标准差"""
     result = {}
 
     # 收集需要读取的sheet
@@ -362,18 +362,20 @@ def process_file_mean_only(file_path: str, config: dict) -> dict:
     step_col = config["step_column"]
     value_col = config["value_column"]
 
-    # 对每个sheet提取每个STEP组的均值
+    # 对每个sheet提取每个STEP组的均值和标准差
     for sheet in config.get("mean_only_sheets", []):
         df = sheets_data.get(sheet, pd.DataFrame())
         for group_name, steps in step_groups.items():
-            col_name = f"{sheet}_{group_name}_mean"
+            col_prefix = f"{sheet}_{group_name}"
             target_steps = set(steps)
             values = extract_values_vectorized(df, step_col, value_col, target_steps)
 
             if values:
-                result[col_name] = round(np.mean(values), 6)
+                result[f"{col_prefix}_mean"] = round(np.mean(values), 6)
+                result[f"{col_prefix}_std"] = round(np.std(values), 6)
             else:
-                result[col_name] = None
+                result[f"{col_prefix}_mean"] = None
+                result[f"{col_prefix}_std"] = None
 
     return result
 
