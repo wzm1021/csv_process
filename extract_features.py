@@ -141,6 +141,41 @@ def read_meta_info_from_df(df: pd.DataFrame, meta_columns: list[str]) -> dict:
     return result
 
 
+def extract_duration(df: pd.DataFrame, step_col: str, value_col: str, target_steps: set[str]) -> float | None:
+    """
+    计算目标STEP组的总持续时间
+    每个STEP分别取VALUE列的最大值，然后求和
+    """
+    if df.empty or step_col not in df.columns or value_col not in df.columns:
+        return None
+
+    df = df.copy()
+
+    def normalize_step(val):
+        if pd.isna(val):
+            return ""
+        if isinstance(val, (int, float)):
+            return str(int(val))
+        try:
+            return str(int(float(str(val).strip())))
+        except:
+            return str(val).strip()
+
+    df['_step_norm'] = df[step_col].apply(normalize_step)
+    df['_value_num'] = pd.to_numeric(df[value_col], errors='coerce')
+
+    # 筛选目标STEP并按STEP分组取最大值
+    mask = df['_step_norm'].isin(target_steps)
+    filtered = df.loc[mask, ['_step_norm', '_value_num']].dropna()
+
+    if filtered.empty:
+        return None
+
+    # 每个STEP取VALUE最大值，然后求和
+    max_per_step = filtered.groupby('_step_norm')['_value_num'].max()
+    return float(max_per_step.sum())
+
+
 def is_stable(values: list[float], threshold: float) -> bool:
     """判断数据是否稳定（值相同或浮动在阈值内）"""
     if len(values) < 2:
@@ -325,6 +360,7 @@ def process_file(file_path: str, config: dict) -> dict:
     all_sheets.extend(config.get("binary_sheets", []))
     all_sheets.extend(config.get("other_sheets", []))
     all_sheets.extend(config.get("stair_sheets", []))
+    all_sheets.extend(config.get("duration_sheets", []))
 
     # 一次性读取所有sheet
     sheets_data = read_all_sheets_fast(file_path, all_sheets)
@@ -421,6 +457,15 @@ def process_file(file_path: str, config: dict) -> dict:
             result[f"{col_prefix}_max"] = round(max(values), 4)
             result[f"{col_prefix}_min"] = round(min(values), 4)
 
+    # 处理持续时间sheet（每个STEP取VALUE最大值后求和）
+    for sheet in config.get("duration_sheets", []):
+        df = sheets_data.get(sheet, pd.DataFrame())
+        for group_name, steps in step_groups.items():
+            col_prefix = f"{sheet}_{group_name}"
+            target_steps = set(steps)
+            duration = extract_duration(df, step_col, value_col, target_steps)
+            result[f"{col_prefix}_duration"] = round(duration, 4) if duration is not None else None
+
     return result
 
 
@@ -447,6 +492,7 @@ def main():
     print(f"0/1类sheet: {config.get('binary_sheets', [])}")
     print(f"其他类sheet: {config.get('other_sheets', [])}")
     print(f"阶梯类sheet: {config.get('stair_sheets', [])}")
+    print(f"持续时间sheet: {config.get('duration_sheets', [])}")
 
     # 使用CPU核心数的进程池
     num_workers = min(multiprocessing.cpu_count(), len(xlsx_files))

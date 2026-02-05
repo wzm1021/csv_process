@@ -14,6 +14,7 @@
     "binary_sheets": ["Status1", "Status2"],
     "other_sheets": ["Pressure1", "Flow1"],
     "stair_sheets": ["Stair1", "Stair2"],
+    "duration_sheets": ["Duration1", "Duration2"],
 
     "stable_threshold": 0.5,
     "stair_change_threshold": 0.5
