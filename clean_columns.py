@@ -4,6 +4,7 @@
 """
 
 import pandas as pd
+import numpy as np
 import argparse
 from pathlib import Path
 
@@ -45,6 +46,13 @@ def clean_columns(input_file: str, output_file: str = None, remove_has_null: boo
         if len(non_null) > 0 and non_null.nunique() == 1:
             removed_cols.append(f"{col} (值相同: {non_null.iloc[0]})")
             continue
+
+        # 检查slope列：列名含slope且绝对值均小于0.01
+        if "slope" in col.lower() and pd.api.types.is_numeric_dtype(df[col]):
+            non_null_vals = df[col].dropna()
+            if len(non_null_vals) > 0 and (np.abs(non_null_vals) < 0.01).all():
+                removed_cols.append(f"{col} (slope绝对值均<0.01)")
+                continue
 
         cols_to_keep.append(col)
 
