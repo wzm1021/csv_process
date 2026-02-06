@@ -1,0 +1,6 @@
+{
+    "a_csv": "a.csv",
+    "b_csv": "b.csv",
+    "exclude_columns": ["col1", "col2"],
+    "output": "a_intersected.csv"
+}
