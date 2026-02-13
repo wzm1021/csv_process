@@ -1,0 +1,20 @@
+# ==============================================================================
+# 晶圆加权系数拟合配置
+# ==============================================================================
+
+input_file: "feature_result.xlsx"   # 输入文件路径（支持csv/xlsx）
+encoding: "utf-8"                   # 文件编码
+input_sheet: null                   # xlsx指定sheet名，null取第一个sheet
+
+# 各片晶圆对应的列名（3片配3个，6片配6个，统一逻辑）
+wafer_columns:
+  - "wafer_1"
+  - "wafer_2"
+  - "wafer_3"
+  # - "wafer_4"
+  # - "wafer_5"
+  # - "wafer_6"
+
+target_column: "target"             # 目标值列名
+fit_intercept: true                 # 是否拟合截距项
+normalize_weights: false            # 是否将系数归一化（使系数和为1）

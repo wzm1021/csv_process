@@ -1,0 +1,64 @@
+# ==============================================================================
+# CSV特征计算器 - YAML配置文件
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 全局基础配置
+# ------------------------------------------------------------------------------
+global:
+  input_file: "feature_result.xlsx"      # 输入文件路径（支持csv/xlsx）
+  output_file: "feature_calculated.xlsx"  # 输出文件路径（支持csv/xlsx）
+  encoding: "utf-8"                       # 文件编码
+  input_sheet: null                       # xlsx输入时指定sheet名，null表示第一个sheet
+
+# ------------------------------------------------------------------------------
+# 基础特征计算（全局适用，始终执行）
+# ------------------------------------------------------------------------------
+base_features:
+  - name: "PST_GLB_SS_TQ"
+    expression: "PST_GLB_SS * P1_GLB_TQ - P2_GLB_TQ"
+    description: "PST全局SS的TQ计算"
+
+  - name: "magnitude"
+    expression: "sqrt(A**2 + B**2)"
+    description: "向量模长"
+
+# ------------------------------------------------------------------------------
+# 特定工艺特征配置（按工艺分组，每组可独立启用/禁用）
+# ------------------------------------------------------------------------------
+specific_features:
+
+  # Etch工艺特征
+  etch:
+    enabled: true
+    description: "Etch蚀刻工艺相关特征"
+    features:
+      - name: "etch_ratio"
+        expression: "A / B"
+        description: "Etch速率比"
+
+      - name: "etch_power_density"
+        expression: "A * B / (C + 1)"
+        description: "Etch功率密度"
+
+  # CMP后段工艺特征
+  cmp_backend:
+    enabled: false
+    description: "CMP后段工艺相关特征"
+    features:
+      - name: "cmp_removal_rate"
+        expression: "sqrt(A**2 + B**2)"
+        description: "CMP去除速率"
+
+      - name: "cmp_uniformity"
+        expression: "(A - B) / (A + B) * 100"
+        description: "CMP均匀性指标"
+
+  # CVD沉积工艺特征（示例）
+  cvd:
+    enabled: false
+    description: "CVD沉积工艺相关特征"
+    features:
+      - name: "cvd_dep_rate"
+        expression: "A * log10(B + 1)"
+        description: "CVD沉积速率"
